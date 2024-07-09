@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { Provider } from "@/context/Provider";
 import TwSizeIndicator from "@/components/helpers/TwSizeIndicator";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Provider>
           <Navbar />
         {children}
+        <Footer />
         </Provider>
         </body>
     </html>

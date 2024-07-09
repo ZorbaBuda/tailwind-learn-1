@@ -6,6 +6,7 @@ import React from "react";
 import NumTextCard from "@/components/cards/NumTextCard";
 import Link from "next/link";
 import ArticleCard from "@/components/cards/ArticleCard";
+import LazyLoader from "@/components/helpers/LazyLoader";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
             {heroText.subtitle2}
           </p>
         </div>
+        <LazyLoader >
         <Image
           className="mx-auto h-[570px] w-full object-cover p-5   basis-1/2   "
           src={picGirl}
@@ -31,6 +33,7 @@ export default function Home() {
           width={387}
           height={581}
         />
+        </LazyLoader>
       </div>
     </section>
 
