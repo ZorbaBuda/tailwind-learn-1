@@ -34,8 +34,7 @@
   }
 
   .h1 {
-    @apply text-[70px]  xl:text-[110px] lg:text-[80px] tracking-[1px] leading-none font-larken
-    font-normal  text-[#F6E6CB];
+    @apply text-[50px]  xl:text-[96px] lg:text-[65px]  font-larken_thin tracking-tighter;
   }
 
   .h2 {
@@ -50,9 +49,9 @@
   }
 
   .btn-prac {
-    @apply    text-lg  uppercase px-8
+    @apply    text-base font-semibold  uppercase
     transition-all duration-500 flex items-center 
-    text-black hover:bg-[#DEF9C4] hover:text-slate-700
-    rounded-md border-2 border-[#DEF9C4];
+    text-blue_dark hover:bg-blue_dark bg-transparent hover:text-grey_light
+    rounded-md border border-blue_dark px-20 py-3;
   }
 }
