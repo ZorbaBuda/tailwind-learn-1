@@ -27,13 +27,16 @@ export default function Home() {
       <section className=" section  lg:mt-0 pt-[100px] px-5 ">
         <div className="  grid md:grid-cols-2 grid-cols-1 max-w-7xl mx-auto gap-y-5  ">
           <div className="    flex flex-col justify-center     lg:pr-20  ">
-            <div className="mb-8 h2">{heroText.title}</div>
-
+            <FadeUp duration={1} classname={"mb-8"}  >
+            <div className=" h2">{heroText.title}</div>
+           </FadeUp>
+           <FadeUp duration={4}>
             <p className="prose md:prose-lg">
               {heroText.subtitle1}
               <br />
               {heroText.subtitle2}
             </p>
+            </FadeUp>
           </div>
 
           {/* <div className="relative w-full h-full overflow-hidden">
@@ -150,20 +153,20 @@ export default function Home() {
       </section>
 
       <section className="section-light bg-white flex flex-col  ">
-        <h2 className="h2 mx-auto">Campuses</h2>
+        <h2 className="h2 mx-auto mb-5">Campuses</h2>
         <div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  w-full mx-auto
-        border-2 border-black  ">
+         ">
           {campuses.map((item, index) => (
-            <div key={index} className=" bg-red-400 p-5">04
-            {/* <Image
+            <Link className='mx-auto max-w-fit 2xl:gap-x-3' key={index} href={'#'}>
+             <Image
               key={index}
-              className=" mx-auto h-[130px] w-[130px]   "
+              className="  h-[150px] w-[150px]   "
               src={item}
               alt="logo"
               width={100}
               height={100}
-            /> */}
-            </div>
+            /> 
+            </Link>
           ))}
         </div>
       </section>
