@@ -6,7 +6,7 @@ const NavLinks = () => {
   return (
     <nav>
       <ul
-        className='flex text-base text-blue_dark '
+        className='flex text-base  '
       >
         {links.map((item : Link , index) => {
           return (
