@@ -28,19 +28,19 @@ function isEven (num : number) {
   
    
   return (
-    <li className={`flex flex-col  ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row' }`}>
+    <li className={`flex flex-col   ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row' }`}>
         <Image 
-           className="mx-auto h-[570px] w-full object-cover sm:max-w-screen-sm  basis-1/2   "
+           className="  lg:px-10  basis-1/2 mx-auto   "
            src={item.img}
            alt={item.name}
-           width={345}
-           height={518}
+           width={468}
+           height={352}
          />
-         <div className=''>
+         <div className='basis-1/2 flex flex-col justify-around'>
             <h1 className='h1'>{item.name}</h1>
-            <p>{item.text}</p>
+            <p className='font-larken_thin text-lg'>{item.text}</p>
             <Link 
-               className=""
+               className="btn-plus"
                href={"#"}
                >+</Link>
          </div>

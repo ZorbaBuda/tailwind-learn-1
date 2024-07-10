@@ -15,39 +15,53 @@ import ArticleCard from "@/components/cards/ArticleCard";
 import LazyLoader from "@/components/helpers/LazyLoader";
 import FadeUp from "@/components/helpers/FadeUp";
 
+//1: basic (images and responsive layout working)
+//2: wrap elements to animate with a div Classname accordingly
+//3: wrap with animation component and pass classname
+//4: sequencing of animation
+
 export default function Home() {
   return (
     <main className="bg-grey_light">
       {/* hero section */}
-      <section className=" section  lg:mt-0 mt-[100px] px-5 ">
-        <div className="  flex flex-col lg:flex-row max-w-7xl mx-auto  ">
-          <div className="    flex flex-col justify-center  basis-1/2   lg:pr-20  ">
-            <FadeUp>
-              <div className="mb-8 h2">{heroText.title}</div>
-            </FadeUp>
-            <FadeUp>
-              <p className="prose md:prose-lg">
-                {heroText.subtitle1}
-                <br />
-                {heroText.subtitle2}
-              </p>
-            </FadeUp>
+      <section className=" section  lg:mt-0 pt-[100px] px-5 ">
+        <div className="  grid md:grid-cols-2 grid-cols-1 max-w-7xl mx-auto gap-y-5  ">
+          <div className="    flex flex-col justify-center     lg:pr-20  ">
+            <div className="mb-8 h2">{heroText.title}</div>
+
+            <p className="prose md:prose-lg">
+              {heroText.subtitle1}
+              <br />
+              {heroText.subtitle2}
+            </p>
           </div>
-          <LazyLoader>
-            <Image
-              className="mx-auto h-[570px] w-full object-cover p-5   basis-1/2   "
-              src={picGirl}
-              alt="logo"
-              width={387}
-              height={581}
-            />
-          </LazyLoader>
+
+          {/* <div className="relative w-full h-full overflow-hidden">
+           <Image
+            className="  mx-auto border-2 border-black  "
+            src='/img/home/girl.jpg'
+            alt="logo"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="top"
+          /> 
+          </div> */}
+        
+              
+          <Image
+            className="mx-auto md:w-full object-cover object-top md:h-[540px] md:p-10     "
+            src={picGirl}
+            alt="logo"
+            width={387}
+            height={581}
+          />
+         
         </div>
       </section>
 
       <section className="section-light bg-blue_light  ">
         <div className=" h2 text-center max-w-[950px] px-5 mx-auto prose">
-          As the founders of KPNI, the Pruimboom Institute’s mission is to
+          As the founders of KPNI, the Pruimboom Institute's mission is to
           integrate this translational medical discipline into healthcare. Our
           final goal, to overcome disease and regain health.
         </div>
@@ -58,19 +72,19 @@ export default function Home() {
           {howCanHelp.line1}
         </div>
         <div className="text-center mx-auto h2 mb-8 ">{howCanHelp.line2}</div>
-        <div className="flex flex-col lg:flex-row lg:gap-x-10 gap-y-10 max-w-7xl mx-auto ">
+        <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-10 gap-y-10 max-w-7xl mx-auto ">
           <Image
-            className="mx-auto h-[570px] w-full object-cover sm:max-w-screen-sm  basis-1/2   "
+            className="mx-auto h-[570px] w-full object-cover object-top md:p-10    "
             src={picWoodBody}
             alt="logo"
             width={345}
             height={518}
           />
-          <ul className="border-2 border-black prose p-5  flex-col  basis-1/2">
+          <ul className=" prose p-5  flex flex-col justify-around md:gap-y-0 gap-y-10 ">
             {howCanHelp.items.map((item) => (
               <NumTextCard key={item.num} num={item.num} text={item.text} />
             ))}
-            <Link href={"#"} className="btn-prac">
+            <Link href={"#"} className="btn-prac inline-block">
               LEARN MORE
             </Link>
           </ul>
@@ -93,10 +107,10 @@ export default function Home() {
         <div className="text-center md:text-xl flex mx-auto mb-[30px] font-larken_thin">
           {academicOfferings.title}
         </div>
-        <div className="text-center mx-auto h2 mb-8 ">
+        <div className="text-center mx-auto h2 mb-20 ">
           {academicOfferings.subtitle}
         </div>
-        <ul className="max-w-7xl mx-auto">
+        <ul className="max-w-7xl mx-auto flex flex-col gap-y-20">
           {academicOfferings.items.map((item, index) => (
             <ArticleCard key={index} item={item} index={index} />
           ))}
@@ -111,12 +125,12 @@ export default function Home() {
           width={345}
           height={518}
         />
-        <div className="basis-1/2 md:py-[80px] py-[30px] px-5 ">
+        <div className="basis-1/2 flex flex-col md:py-[80px] py-[30px] px-5 ">
           <h3 className="h3">Dr. Leo Pruimboom, PhD</h3>
           <p>KPNI Founder</p>
           <p>Director of the Pruimboom Institute.</p>
 
-          <h3 className="h3">
+          <h3 className="h3 ">
             A life dedicated to science and the study of KPNI in medicine
           </h3>
           <p>
@@ -128,7 +142,8 @@ export default function Home() {
             health.
           </p>
 
-          <Link href={"#"} className="btn-prac">
+          <Link href={"#"} className="text-base hover:tracking-widest transition-all
+          duration-300 font-semibold  ">
             READ ABOUT THE FOUNDER
           </Link>
         </div>
@@ -136,16 +151,19 @@ export default function Home() {
 
       <section className="section-light bg-white flex flex-col  ">
         <h2 className="h2 mx-auto">Campuses</h2>
-        <div className="flex flex-wrap">
+        <div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  w-full mx-auto
+        border-2 border-black  ">
           {campuses.map((item, index) => (
-            <Image
+            <div key={index} className=" bg-red-400 p-5">04
+            {/* <Image
               key={index}
-              className=" mx-auto h-[130px] w-[130px]  "
+              className=" mx-auto h-[130px] w-[130px]   "
               src={item}
               alt="logo"
               width={100}
               height={100}
-            />
+            /> */}
+            </div>
           ))}
         </div>
       </section>

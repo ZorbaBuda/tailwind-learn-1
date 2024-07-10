@@ -50,8 +50,13 @@
 
   .btn-prac {
     @apply    text-base font-semibold  uppercase
-    transition-all duration-500 flex items-center 
+    transition-all duration-300 flex items-center max-w-fit
     text-blue_dark hover:bg-blue_dark bg-transparent hover:text-grey_light
     rounded-md border border-blue_dark px-20 py-3;
+  }
+
+  .btn-plus {
+    @apply  text-2xl bg-blue_dark text-white px-5 py-2 rounded-xl hover:bg-salmon
+    transition-all duration-300 max-w-fit
   }
 }
