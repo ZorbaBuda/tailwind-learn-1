@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      typography:  ({
+        DEFAULT: {
+          css: {
+            maxWidth: "90ch",
+          }
+        }
+      }),
      colors: {
        grey_light: "#F5F1EE",
        blue_light: "#A0CDE5",
@@ -21,6 +28,6 @@ const config: Config = {
     },
    
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;
