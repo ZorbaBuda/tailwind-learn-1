@@ -14,7 +14,7 @@ interface Props {
     return {
      
       hidden: {
-        y:  40 ,
+        y:  0 ,
         opacity: 0,
         x:  0,
       },
@@ -37,9 +37,11 @@ interface Props {
 
 export default function FadeUp({delay, children, classname} : Props) {
   return (
+
+    
     <motion.section
    
-    variants={variants(delay? delay : 0)}
+    variants={variants(delay ? delay : 0)}
     initial='hidden'
     whileInView={'show'}
     viewport={{ once: false, amount: 0.1 }}
