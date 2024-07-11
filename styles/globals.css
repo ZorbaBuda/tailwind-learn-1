@@ -42,10 +42,10 @@
   }
 
   .h3 {
-    @apply text-[28px] lg:text-[34px] tracking-tighter mb-4 font-larken_thin;
+    @apply text-[28px] lg:text-[34px] tracking-tighter font-larken_thin;
   }
   .h4 {
-    @apply text-[20px] lg:text-[30px] xl:text-[40px] 2xl:text-[60px] text-dark   max-w-[236px] leading-none mb-[38px];
+    @apply text-[20px] lg:text-[24px] tracking-tighter font-larken_thin;
   }
 
   .btn-prac {
