@@ -18,6 +18,16 @@
   src: url("../public/font/roboto/Roboto-Regular.ttf");
 }
 
+@font-face {
+  font-family: "manrope";
+  src: url("../public/font/Manrope/Manrope-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "jakarta";
+  src: url("../public/font/PlusJakartaSans/PlusJakartaSans-Regular.ttf");
+}
+
 @layer base {
    /* body or html? */
   body {
@@ -58,5 +68,18 @@
   .btn-plus {
     @apply  text-2xl bg-blue_dark text-white px-5 py-2 rounded-xl hover:bg-salmon
     transition-all duration-300 max-w-fit
+  }
+
+  /* clinique */
+  .h1c {
+    @apply text-[71.5px] lg:text-[82.5px] xl:text-[110px] font-manrope
+  }
+
+  .h2c {
+    @apply text-[52.5px] lg:text-[59.5px] xl:text-[70px] font-manrope
+  }
+
+  .h3c {
+    @apply text-[30.4px] lg:text-[32.3px] xl:text-[38px] font-manrope
   }
 }

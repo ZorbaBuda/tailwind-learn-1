@@ -21,19 +21,10 @@ import HeroFullWSection from "@/components/sections/HeroFullWSection";
 export default function Home() {
   return (
     <main className="bg-grey_light">
-      <HeroSection content={heroText} />
-
-      <ParagraphSection text={homeParagraph} />
-
+    
       <ImgListSection content={howCanHelp} />
 
-      <ListArraySection list={disciplines} />
-
-      <ArticleRevList content={academicOfferings} />
-
-      <HeroFullWSection content={chiefPresentation} />
-
-      <GridList items={campuses} />
+    
     </main>
   );
 }

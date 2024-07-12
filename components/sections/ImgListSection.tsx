@@ -35,16 +35,20 @@ export default function ImgListSection({ content } : {content : ContentProps}) {
       />
       </FadeIn>
       <ul className=" prose p-5  flex flex-col justify-around md:gap-y-0 gap-y-10 ">
-        {content.items.map((item , index) => (
-          <FadeUp key={item.num} delay={0.2 * index}>
-          <NumTextCard  num={item.num} text={item.text} />
-          </FadeUp>
-        ))}
+       
+        <div className='flex flex-row gap-10'>
         <FadeUp>
-        <Link href={"#"} className="btn-prac inline-block">
-          LEARN MORE
+        <Link href={"/site1"} className="btn-prac inline-block">
+          SITE 1
         </Link>
         </FadeUp>
+        <FadeUp>
+          
+        <Link href={"/site2"} className="btn-prac inline-block">
+          SITE 2
+        </Link>
+        </FadeUp>
+        </div>
       </ul>
     </div>
   </section>

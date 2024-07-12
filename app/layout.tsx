@@ -24,9 +24,9 @@ export default function RootLayout({
       <body>
       <TwSizeIndicator />
         <Provider>
-          <Navbar />
+        
         {children}
-        <Footer />
+       
         </Provider>
         </body>
     </html>

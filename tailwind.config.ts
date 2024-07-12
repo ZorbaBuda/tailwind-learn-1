@@ -19,11 +19,19 @@ const config: Config = {
        grey_light: "#F5F1EE",
        blue_light: "#A0CDE5",
        blue_dark: "#052D41",
-       salmon: "#FB846B"
+       salmon: "#FB846B",
+       //site 2
+       turquesa: "#0B4750",
+       verde: "#C9FFB3",
+       gris: "#E8E7E7",
+       verde_oscuro:"#153137",
+       verde_claro: "#EFFFE8"
      },
       fontFamily: {
       larken: ["larken", "serif"],
-      larken_thin: ["larken-thin", "serif"]
+      larken_thin: ["larken-thin", "serif"],
+      manrope: ["manrope", 'sans-serif'],
+      jakarta: ["jakarta"]
     }
     },
    
