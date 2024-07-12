@@ -14,14 +14,14 @@ export default function HeaderListSection({
   content: ContentProps;
 }) {
   return (
-    <section className="section-light bg-grey_light">
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto">
-        <h1 className="h1">{content.title}</h1>
+    <section className="section-light bg-grey_light min-h-screen">
+      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto px-5 xl:px-0">
+        <h1 className="h1 mr-8">{content.title}</h1>
         <div>
-          <p className="h4">{content.summary}</p>
-          <ul>
+          <p className="h4 mb-7">{content.summary}</p>
+          <ul className="prose">
             {content.items.map((item, index) => (
-              <div key={index} className="flex flex-row">
+              <div key={index} className="gap-x-3 flex flex-row items-center">
                 <Image
                   className="    "
                   src={Dot}

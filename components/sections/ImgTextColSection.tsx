@@ -24,7 +24,7 @@ export default function ImgTextColSection({ content } : {content : ContentProps}
         <div className="">
             <div className="h2 mb-9">{content.title}</div>
             <div className="h4 mb-5">{content.summary}</div>
-            <p className="lg:columns-2 ">{parser(content.p)}</p>
+            <div className="lg:columns-2 ">{parser(content.p)}</div>
         </div>
       </div>
     </section>

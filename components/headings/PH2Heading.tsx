@@ -10,7 +10,7 @@ export default function PH2Heading({content} : {content : ContentProps}) {
   return (
     <>
      <FadeUp delay={0} classname="mx-auto">
-        <div className="text-center md:text-xl flex  mb-[30px] font-larken_thin">
+        <div className="text-center md:text-xl flex mx-auto  mb-[30px] font-larken_thin">
           {content.p}
         </div>
         </FadeUp>
