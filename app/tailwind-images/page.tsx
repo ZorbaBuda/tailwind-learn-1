@@ -13,6 +13,28 @@ export default function Home() {
   return (
     <main className="bg-grey_light">
 
+<div className="min-h-screen bg-gray-100 p-12 flex justify-center items-center">
+  <div className="container flex flex-col md:flex-row">
+    <div className="flex-[40%]">
+      <img className=" w-full h-full object-cover rounded-t-xl md:rounded-t-none md:rounded-l-xl" src="https://res.cloudinary.com/thirus/image/upload/v1632854291/logos/drawers_gr2wn5.jpg" alt="Furniture" />
+    </div>
+    <div className="p-9 flex-[60%]">
+      <h2 className="text-[1.4rem] leading-snug font-bold text-gray-600">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+      <p className="mt-3 text-gray-500 text-sm">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.</p>
+      <div className="flex items-center">
+        <img src="https://res.cloudinary.com/thirus/image/upload/v1632854290/logos/avatar-michelle_qcobnu.jpg" alt="" />
+        <div>
+          <p>Michelle Appleton</p>
+          <span>28 Jun 2020</span>
+        </div>
+        <div className="share-icon ml-auto">
+          <img src="https://res.cloudinary.com/thirus/image/upload/v1632854290/logos/icon-share_frvrfu.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
            {/* hero section */}
       <section className=" section  lg:mt-0 pt-[100px] px-5 ">
         <div className="  grid md:grid-cols-2 grid-cols-1 max-w-7xl mx-auto gap-y-5  ">
@@ -20,7 +42,7 @@ export default function Home() {
             <div className="mb-8 h2">{heroText.title}</div>
 
             <p className=" prose md:prose-lg">
-              {heroText.subtitle1}
+              {heroText.subtitle}
               <br />
               {heroText.subtitle2}
             </p>
@@ -70,7 +92,6 @@ export default function Home() {
                         <Image className="" layout='fill'objectPosition="top" objectFit="cover" src='/img/home/girl.jpg' alt="tutorial" />
 
                     </div>
-                    <p className="max-w-prose py-12 px-4">{heroText.subtitle1}</p>
                 </div>
             </div>
         </section>

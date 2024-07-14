@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer"
+import FooterCli from "@/components/FooterCli"
 import Navbar2 from "@/components/Navbar2"
 
 export default function PniLayout({
@@ -7,11 +7,11 @@ export default function PniLayout({
     children: React.ReactNode
   }) {
     return (
-      <section className="font-jakarta">
+      <section className="font-jakarta antialiased">
         <Navbar2 />
    
         {children}
-        <Footer />
+        <FooterCli />
       </section>
     )
   }

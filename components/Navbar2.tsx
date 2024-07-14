@@ -65,7 +65,8 @@ export default function Navbar2() {
        h-[120px] fixed top-0   z-20 w-full  transition-all duration-700  `}
     >
       <div
-        className="flex  justify-between mx-auto items-center h-full  px-10 
+        className="flex  justify-between mx-auto items-center h-full  
+		              px-10 
 	                  sm:max-w-[407px] sm:px-0 
 					  md:max-w-[588px]
 					  lg:max-w-none lg:px-[90px]
@@ -73,7 +74,7 @@ export default function Navbar2() {
       >
         <Link href="/site2">
           <Image src={logo} alt="logo" width={210} height={65} 
-		//   className="brightness-0 saturate-[100%]"
+		  className={` ${transparent ? "" : "brightness-0 saturate-[100%]"}`}
 		   />
         </Link>
 
@@ -110,7 +111,7 @@ export default function Navbar2() {
                 initial="hide"
                 animate="show"
                 exit="hide"
-                className="  fixed inset-0 bg-[#26355D] bg-opacity-95 p-6 h-screen flex flex-col justify-center space-y-10 lg:hidden"
+                className="  fixed inset-0 bg-[#26355D] bg-opacity-95 p-6 min-h-screen flex flex-col justify-center space-y-10 lg:hidden"
               >
                 <motion.ul
                   variants={{
