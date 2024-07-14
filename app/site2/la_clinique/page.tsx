@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { cliHero, cliMission, cliActions, cliAbout } from '@/lib/dataClinique'
 import Image from 'next/image'
 import CliHeroSection from '@/components/s2Sections/CliHeroSection'

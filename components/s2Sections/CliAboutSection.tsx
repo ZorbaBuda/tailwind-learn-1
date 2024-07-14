@@ -1,6 +1,7 @@
 // import { StaticImageData } from 'next/image'
 import React from 'react'
 import  Image, { StaticImageData }  from 'next/image'
+import parser from 'html-react-parser'
 
 type ContentProps = {
     title: string
@@ -13,7 +14,7 @@ type ContentProps = {
 export default function CliAboutSection({ content} : { content : ContentProps}) {
   return (
    <section className='bg-turquesa text-white'>
-    <div className='max-w-7xl flex flex-col  mx-auto'>
+    <div className='max-w-7xl flex flex-col  mx-auto px-16'>
     <div className='h2c text-gris'>{content.title}</div>
     <hr className='border-t border-verde' />
         <div className='flex flex-col lg:flex-row'>
@@ -27,7 +28,7 @@ export default function CliAboutSection({ content} : { content : ContentProps}) 
         <div>
             <div>{content.name}</div>
             <div>{content.profession}</div>
-            <div>{content.text}</div>
+            <div className='leading-7 flex flex-col gap-y-3'>{parser(content.text)}</div>
         </div>
         </div>
     </div>

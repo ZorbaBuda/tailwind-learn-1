@@ -11,10 +11,10 @@ type ContentProps = {
 
 export default function CliActionsSection({ content } : { content : ContentProps}) {
   return (
-    <section className='bg-verde_claro py-20'>
-        <div className='max-w-7xl flex flex-col lg:flex-row mx-auto'>
-        <div className='h2c text-black'>{content.title}</div>
-        <ul>
+    <section className='bg-verde_claro py-20 text-verde_oscuro'>
+        <div className='max-w-7xl flex flex-col lg:flex-row mx-auto px-10 md:px-[110px] lg:px-0 gap-y-5'>
+        <div className='h2c tracking-tight leading-none'>{content.title}</div>
+        <ul className='text-[18px]'>
             {content.items.map(item => (
                 <Accordion key={item.title} title={item.title} answer={item.text} />
             ))}

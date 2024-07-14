@@ -13,7 +13,7 @@ export default function Accordion ({ title, answer }: { title: string, answer: s
         <span>{title}</span>
         {/* {accordionOpen ? <span>-</span> : <span>+</span>} */}
         <svg
-          className="fill-indigo-500 shrink-0 ml-8"
+          className="fill-verde_oscuro shrink-0 ml-8"
           width="16"
           height="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -39,14 +39,15 @@ export default function Accordion ({ title, answer }: { title: string, answer: s
         </svg>
       </button>
       <div
-        className={`grid overflow-hidden transition-all duration-300 ease-in-out text-slate-600 text-sm ${
+        className={` grid overflow-hidden transition-all duration-500 ease-in-out text-slate-600 ${
           accordionOpen
             ? "grid-rows-[1fr] opacity-100"
             : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="overflow-hidden">{answer}</div>
+        <div className="overflow-hidden py-5">{answer}</div>
       </div>
+      
     </div>
   );
 };

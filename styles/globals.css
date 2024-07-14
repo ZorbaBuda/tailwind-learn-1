@@ -72,11 +72,11 @@
 
   /* clinique */
   .h1c {
-    @apply text-[71.5px] lg:text-[82.5px] xl:text-[110px] font-manrope
+    @apply text-[71.5px] lg:text-[82.5px] xl:text-[110px] tracking-tight leading-none font-manrope
   }
 
   .h2c {
-    @apply text-[52.5px] lg:text-[59.5px] xl:text-[70px] font-manrope
+    @apply text-[52.5px] lg:text-[59.5px] xl:text-[70px] tracking-tight leading-none font-manrope
   }
 
   .h3c {

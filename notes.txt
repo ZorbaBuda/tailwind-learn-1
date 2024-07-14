@@ -1,0 +1,31 @@
+basico
+
+1) proyecto basico como puede ser el de naturopatia, añadir la parte de SEO
+
+2) abrir vps hosting y aprender a desplegar el proyecto
+
+3) instalar un dominio y ya tendriamos un sitio web funcionando
+
+
+inicio: sistema de blogs
+
+1) base de datos mongo : en el servidor vps
+
+2)  NEXT dashboard
+
+3) NEXT blog
+
+
+medio: 
+  
+1) lo anterior, pero dockerizado
+
+avanzado:
+
+1) Continuous deployment/ continuous integration
+
+
+-payload cms
+- Ir realizando tutoriales para perfeccionar conocimientos
+- Seguir perfeccionando tailwind
+
