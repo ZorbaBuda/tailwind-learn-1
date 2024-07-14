@@ -83,4 +83,12 @@
   .h3c {
     @apply text-[30.4px] lg:text-[32.3px] xl:text-[38px] font-manrope
   }
+
+  .btnC {
+    @apply      uppercase px-8 py-3 tracking-wider
+    transition-all duration-300 flex items-center  text-[17px]
+    text-white hover:bg-verde hover:text-verde_oscuro
+    rounded-md border-2 border-verde  max-w-fit
+    ;
+  }
 }
