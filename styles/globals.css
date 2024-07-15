@@ -28,6 +28,18 @@
   src: url("../public/font/PlusJakartaSans/PlusJakartaSans-Regular.ttf");
 }
 
+@font-face {
+  font-family: "satoshi-medium";
+  src: url("../public/font/satoshi/Satoshi-Medium.woff");
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("../public/font/satoshi/Satoshi-Regular.woff");
+}
+
+
+
 @layer base {
    /* body or html? */
   body {

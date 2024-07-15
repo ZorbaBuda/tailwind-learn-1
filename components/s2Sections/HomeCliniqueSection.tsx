@@ -13,23 +13,28 @@ type ContentProps = {
 
 export default function HomeCliniqueSection({content} : {content : ContentProps}) {
   return (
-    <section className="section bg-white flex-flex-col">
-        <div className="h2c">{content.title} </div>
-        <div className="flex flex-col-reverse lg:flex-row">
+    <section className="section bg-white  ">
+      <div className="flex-flex-col mx-auto 2xl:max-w-7xl lg:max-w-[70%] 
+      px-5 md:px-[110px] lg:px-0">
+        <div className="h2c mb-8">{content.title} </div>
+        <div className="flex flex-col-reverse lg:flex-row gap-y-16 gap-x-32">
+      <div className="lg:w-[50%]">
        <Image
-          // className=" pb-[190px]lg:pb-0 mx-auto flex 2xl:max-w-[740px] xl:max-w-[624px] lg:max-w-[455px] "
-          className="   "
+        
+          className=" w-full  "
           src={content.image}
           alt="logo"
           width={558}
           height={671}
         />
-        <div className="flex flex-col">
-            <div>{content.label}</div>
-            <div>{content.text}</div>
-           <Link href={content.link} >{content.linkText}</Link>
+        </div>
+        <div className="flex flex-col lg:w-[50%]">
+            <div className="mb-6">{content.label}</div>
+            <div className="h3c mb-6">{content.text}</div>
+           <Link className="border-black border-b-2 max-w-fit tracking-tight " href={content.link} >{content.linkText}</Link>
         </div>
       
+        </div>
         </div>
 
     </section>

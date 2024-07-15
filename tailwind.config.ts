@@ -25,14 +25,29 @@ const config: Config = {
        verde: "#C9FFB3",
        gris: "#E8E7E7",
        verde_oscuro:"#153137",
-       verde_claro: "#EFFFE8"
+       verde_claro: "#EFFFE8",
+       //site3
+       cBlue:'#274EA9',
+       cGray: '#C0C9DA',
+       cGrayLight:'#EDF2F6',
+       cBlueLight:'#2EEAFF',
+       cViolet: '#454C7D'
+
+
      },
       fontFamily: {
       larken: ["larken", "serif"],
       larken_thin: ["larken-thin", "serif"],
       manrope: ["manrope", 'sans-serif'],
-      jakarta: ["jakarta"]
-    }
+      jakarta: ["jakarta"],
+      satoshi: ["satoshi"],
+      satoshi_medium: ["satoshi-medium"]
+    },
+    backgroundImage: {
+      heroDesktop: "url('/img/celares/home/Cell_Shuttle_Hero_Shadow@2x.jpg')",
+      heroMobile: "url('/img/celares/home/Home_Hero_Mobile@2x.jpg')",
+      
+    },
     },
    
   },

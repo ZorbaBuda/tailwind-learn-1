@@ -25,7 +25,7 @@ export default function ImgListSection({ content } : {content : ContentProps}) {
     <section className="section-light flex flex-col px-5">
     <PH2Heading content = {content.heading} />
     <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-10 gap-y-10 max-w-7xl mx-auto ">
-      <FadeIn delay={0.4}>
+     
       <Image
         className="mx-auto h-[570px] w-full object-cover object-top md:p-10    "
         src={content.image}
@@ -33,21 +33,25 @@ export default function ImgListSection({ content } : {content : ContentProps}) {
         width={345}
         height={518}
       />
-      </FadeIn>
+   
       <ul className=" prose p-5  flex flex-col justify-around md:gap-y-0 gap-y-10 ">
        
         <div className='flex flex-row gap-10'>
-        <FadeUp>
+        
         <Link href={"/site1"} className="btn-prac inline-block">
           SITE 1
         </Link>
-        </FadeUp>
-        <FadeUp>
+      
+     
           
         <Link href={"/site2"} className="btn-prac inline-block">
           SITE 2
         </Link>
-        </FadeUp>
+
+        <Link href={"/site3"} className="btn-prac inline-block">
+          SITE 3
+        </Link>
+       
         </div>
       </ul>
     </div>

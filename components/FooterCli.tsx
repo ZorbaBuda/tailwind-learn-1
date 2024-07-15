@@ -44,7 +44,7 @@ export default function FooterCli() {
                   <p key={item}>{item}</p>
                 ))}
               </div>
-              <Link href={fAddresse.mapsAddress}>{fAddresse.mapsLegend}</Link>
+              <Link href={fAddresse.mapsAddress} legacyBehavior passHref>{fAddresse.mapsLegend}</Link>
             </div>
             {/* nous joindre */}
             <div>

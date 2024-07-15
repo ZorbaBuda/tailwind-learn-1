@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import Image from "next/image";
+import { BlurMotion } from "../helpers/BlurMotion";
 
 type ContentProps = {
   image: StaticImageData;
@@ -17,6 +18,7 @@ export default function HomeHeroSection({
   return (
     <div className="relative h-screen flex flex-row items-center border-2 border-black">
       {/* texto */}
+      {/* <BlurMotion> */}
       <div
         className="  flex flex-col gap-y-8 absolute  px-10  mt-24 left-0 right-0 
         sm:mx-auto sm:w-[560px] sm:px-0
@@ -31,21 +33,24 @@ export default function HomeHeroSection({
           {content.btnText}
         </Link>
       </div>
+      {/* </BlurMotion> */}
 
       {/* bloque izqda */}
       <div className="bg-verde_oscuro h-screen  flex-1  "></div>
 
       {/* image */}
-      <div className=" flex  justify-end w-full  xl:w-[64%] lg:w-[962px]  h-screen  ">
+     
+      <div className=" flex  justify-end w-full  xl:w-[64%] lg:w-[962px]  bg-black  h-screen  ">
         <Image
           // className=" pb-[190px]lg:pb-0 mx-auto flex 2xl:max-w-[740px] xl:max-w-[624px] lg:max-w-[455px] "
-          className="  object-cover  object-top w-full    "
+          className="  object-cover  object-top w-full     "
           src={content.image}
           alt="logo"
           width={740}
           height={777}
         />
       </div>
-    </div>
+      </div>
+   
   );
 }
