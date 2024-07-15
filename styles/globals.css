@@ -103,4 +103,9 @@
     rounded-md border-2 border-verde  max-w-fit
     ;
   }
+
+  /* celares */
+  .h1cel {
+    @apply  text-[39px] sm:text-[50px] lg:text-[56px] xl:text-[63px] font-satoshi_medium
+  }
 }
