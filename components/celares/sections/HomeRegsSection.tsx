@@ -5,6 +5,7 @@ import MapImage from '@/public/img/celares/home/map-services.png'
 import ArrowButton from '../buttons/ArrowButton';
 import HeaderPart from '../parts/HeaderPart';
 import { homeRegs } from '@/lib/dataCelares';
+import MapLink from '../parts/MapLinkDialog';
 
 type ContentProps = {
     headerPart: {
@@ -46,9 +47,19 @@ export default function HomeRegsSection() {
         </div> */}
         <div className='flex flex-col lg:flex-row-reverse items-end'>
         <div>
-            <div className='relative'>
+            <div className='relative border-2 border-black'>
         <Image className="" src={MapImage} alt="logo" width={2012} height={1184} />
-        <div className={`absolute ${homeRegs.factories[0].top} left-[11%] border-2 border-pink-500`}>+</div>
+
+        {/* <div className={`absolute ${homeRegs.factories[0].top} ${homeRegs.factories[0].left} border-2 border-pink-500`}>+</div> */}
+        {/* <div className={`absolute ${homeRegs.factories[0].top} ${homeRegs.factories[0].left} border-2 border-pink-500`}>hiii</div> */}
+        {/* <div className={`absolute ${homeRegs.factories[1].top} ${homeRegs.factories[1].left} border-2 border-pink-500`}>+</div>
+        <div className={`absolute top-[46%] left-[24.5%] ${homeRegs.factories[3].left} border-2 border-pink-500`}>+</div> */}
+
+       {homeRegs.factories.map(item => (
+            <MapLink key={item.factory} content={item} />
+       ))}
+        
+
         </div>
         <div className='flex flex-col lg:flex-row'>
             <div>EXISTING SMART FACTORIES</div>
