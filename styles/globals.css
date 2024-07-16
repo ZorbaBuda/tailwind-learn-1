@@ -106,6 +106,14 @@
 
   /* celares */
   .h1cel {
-    @apply  text-[39px] sm:text-[50px] lg:text-[56px] xl:text-[63px] font-satoshi_medium
+    @apply  leading-none text-[39px] sm:text-[50px] lg:text-[56px] xl:text-[63px] font-satoshi_medium
+  }
+
+  .h2cel {
+    @apply  leading-tight text-[36px] sm:text-[40px] lg:text-[50px] xl:text-[50px] 
+  }
+
+  Link {
+    @apply max-w-fit
   }
 }

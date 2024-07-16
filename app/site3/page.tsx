@@ -1,5 +1,7 @@
+import HomeAnimationSection from "@/components/celares/sections/HomeAnimationSection";
 import HomeHero from "@/components/celares/sections/HomeHero";
 import HomeRegsSection from "@/components/celares/sections/HomeRegsSection";
+import HomeTechSection from "@/components/celares/sections/HomeTechSection";
 import { homeHero, homeRegs } from "@/lib/dataCelares";
 
 export default function Home() {
@@ -7,7 +9,9 @@ export default function Home() {
     <main className="bg-grey_light">
      
      <HomeHero content={homeHero} />
-     <HomeRegsSection content={homeRegs} />
+     <HomeRegsSection  />
+     <HomeAnimationSection />
+     <HomeTechSection />
   
     </main>
   );
