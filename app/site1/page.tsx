@@ -1,39 +1,31 @@
-import {
-    disciplines,
-    howCanHelp,
-    homeParagraph,
-    heroText,
-    academicOfferings,
-    campuses,
-    chiefPresentation,
-  } from "@/lib/data.js";
+
   
   import React from "react";
-  import HeroSection from "@/components/sections/HeroSection";
-  import ParagraphSection from "@/components/sections/ParagraphSection";
+  import HeroSection from "@/components/pruinboom/sections/HeroSection";
+  import ParagraphSection from "@/components/pruinboom/sections/ParagraphSection";
   
-  import ImgListSection from "@/components/sections/ImgListSection";
-  import ListArraySection from "@/components/sections/ListArraySection";
-  import ArticleRevList from "@/components/sections/ArticleRevList";
-  import GridList from "@/components/sections/GridList";
-  import HeroFullWSection from "@/components/sections/HeroFullWSection";
+  import ImgListSection from "@/components/pruinboom/sections/ImgListSection";
+  import ListArraySection from "@/components/pruinboom/sections/ListArraySection";
+  import ArticleRevList from "@/components/pruinboom/sections/ArticleRevList";
+  import GridList from "@/components/pruinboom/sections/GridList";
+  import HeroFullWSection from "@/components/pruinboom/sections/HeroFullWSection";
   
   export default function Home() {
     return (
       <main className="bg-grey_light">
-        <HeroSection content={heroText} />
+        <HeroSection  />
   
-        <ParagraphSection text={homeParagraph} />
+        <ParagraphSection  />
   
-        <ImgListSection content={howCanHelp} />
+        <ImgListSection  />
   
-        <ListArraySection list={disciplines} />
+        <ListArraySection />
   
-        <ArticleRevList content={academicOfferings} />
+        <ArticleRevList  />
   
-        <HeroFullWSection content={chiefPresentation} />
+        <HeroFullWSection  />
   
-        <GridList items={campuses} />
+        <GridList  />
       </main>
     );
   }

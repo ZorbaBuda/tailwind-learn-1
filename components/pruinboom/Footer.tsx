@@ -1,5 +1,5 @@
 import React from "react";
-import { footerData } from "@/lib/data";
+import { footerData } from "@/lib/dataPruimboom";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/img/logo.png";

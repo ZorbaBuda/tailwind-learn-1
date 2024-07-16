@@ -35,15 +35,22 @@ export default function MapLinkDialog({ content }: { content: ContentProps }) {
 
   const { exists, factory, description, size, top, left } = content;
 
+ 
   return (
     <>
       <button
-        className={`
-      rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
-      absolute ${top} ${left} ${
-          exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
-        }`}
-      >
+      //   className={`
+      // rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
+      //  absolute ${top} ${left} ${
+      //     exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
+      //   }`}
+      style={{top: `${top}`, left: `${left}`}}
+      className={`
+        rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
+         absolute  ${
+            exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
+          }`}
+       >
         <span>{isLg ? "isLg" : "isNotLg"}</span>
       </button>
       {/* <DialogMap /> */}

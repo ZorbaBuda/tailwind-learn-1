@@ -2,7 +2,7 @@ import Image from "next/image";
 import {
   heroText,
  
-} from "@/lib/data.js";
+} from "@/lib/dataPruimboom";
 import picGirl from "@/public/img/home/girl.jpg";
 import picWoodBody from "@/public/img/home/wood-body.jpg";
 import React from "react";

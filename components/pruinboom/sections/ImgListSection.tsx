@@ -5,6 +5,7 @@ import PH2Heading from '../headings/PH2Heading'
 import FadeIn from '../helpers/FadeIn'
 import FadeUp from '../helpers/FadeUp'
 import Image, { StaticImageData } from 'next/image'
+import { howCanHelp } from '@/lib/dataPruimboom'
 
 type ContentProps = {
     heading : {
@@ -20,15 +21,15 @@ type Item = {
   text: string
 }
 
-export default function ImgListSection({ content } : {content : ContentProps}) {
+export default function ImgListSection() {
   return (
     <section className="section-light flex flex-col px-5">
-    <PH2Heading content = {content.heading} />
+    <PH2Heading content = {howCanHelp.heading} />
     <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-10 gap-y-10 max-w-7xl mx-auto ">
      
       <Image
         className="mx-auto h-[570px] w-full object-cover object-top md:p-10    "
-        src={content.image}
+        src={howCanHelp.image}
         alt="logo"
         width={345}
         height={518}

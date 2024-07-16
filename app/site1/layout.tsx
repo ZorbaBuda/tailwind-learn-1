@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer"
-import Navbar from "@/components/Navbar"
+import Footer from "@/components/pruinboom/Footer"
+import Navbar from "@/components/pruinboom/Navbar"
 
 export default function PniLayout({
     children, // will be a page or nested layout

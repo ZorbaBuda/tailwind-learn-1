@@ -29,3 +29,11 @@ avanzado:
 - Ir realizando tutoriales para perfeccionar conocimientos
 - Seguir perfeccionando tailwind
 
+-practica tailwind
+ 1) Para cada uno de los 3 websites en curso, reproducir:
+
+    - desktop navbar and mobile navbar
+    - two first pages of the websites
+    - footer 
+    - refactoring : what code can improve?
+

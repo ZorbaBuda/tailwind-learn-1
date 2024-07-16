@@ -1,28 +1,27 @@
-import {
-  disciplines,
-  howCanHelp,
-  homeParagraph,
-  heroText,
-  academicOfferings,
-  campuses,
-  chiefPresentation,
-} from "@/lib/data.js";
+import Link from "next/link";
 
-import React from "react";
-import HeroSection from "@/components/sections/HeroSection";
-import ParagraphSection from "@/components/sections/ParagraphSection";
-
-import ImgListSection from "@/components/sections/ImgListSection";
-import ListArraySection from "@/components/sections/ListArraySection";
-import ArticleRevList from "@/components/sections/ArticleRevList";
-import GridList from "@/components/sections/GridList";
-import HeroFullWSection from "@/components/sections/HeroFullWSection";
 
 export default function Home() {
   return (
-    <main className="bg-grey_light">
+    <main className="bg-grey_light w-full h-screen flex items-center">
     
-      <ImgListSection content={howCanHelp} />
+    <div className='flex flex-col mx-auto gap-10'>
+        
+        <Link href={"/site1"} className="btn-prac inline-block">
+          Pruinboom
+        </Link>
+      
+     
+          
+        <Link href={"/site2"} className="btn-prac inline-block">
+          Clinique
+        </Link>
+
+        <Link href={"/site3"} className="btn-prac inline-block">
+          Celares
+        </Link>
+       
+        </div>
 
     
     </main>

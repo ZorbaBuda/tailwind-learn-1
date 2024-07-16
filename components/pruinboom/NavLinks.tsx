@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { links } from '@/lib/data';
+import { links } from '@/lib/dataPruimboom';
 
 const NavLinks = () => {
   // console.log(links)

@@ -22,7 +22,16 @@ type ContentProps = {
 export default function TechListSlider({content} : {content : ContentProps}) {
   return (
     <div className="flex flex-col lg:flex-row-reverse">
-        <Image src={content.image} alt="logo" width={1623} height={1153} />
+        {typeof content.image === "string" ? (
+           <iframe
+         className="border-0"
+          src={content.image}
+           title="Accelerating Access to Life-Saving Cell Therapies" 
+          allowFullScreen
+           /> 
+        ) : (
+         <Image src={content.image} alt="logo" width={1623} height={1153} />
+        )}
         <div>
             <div>{content.title}</div>
             <div>{content.description}</div>

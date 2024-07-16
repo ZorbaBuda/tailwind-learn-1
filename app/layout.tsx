@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Provider } from "@/context/Provider";
-import TwSizeIndicator from "@/components/helpers/TwSizeIndicator";
+import TwSizeIndicator from "@/components/pruinboom/helpers/TwSizeIndicator";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/pruinboom/Footer";
 
 // const inter = Inter({ subsets: ["latin"] });
 

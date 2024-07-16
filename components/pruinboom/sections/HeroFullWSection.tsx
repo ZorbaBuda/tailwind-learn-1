@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
+import { chiefPresentation } from '@/lib/dataPruimboom'
 
 type ContentProps = {
     image : StaticImageData,
@@ -14,14 +15,14 @@ type ContentProps = {
     }
 }
 
-export default function HeroFullWSection({content} : {content : ContentProps}) {
+export default function HeroFullWSection() {
 
-    const info = content.info
+    const info = chiefPresentation.info
   return (
     <section className="bg-blue_light flex flex-col lg:flex-row gap-y-5 ">
     <Image
       className=" mx-auto h-[570px] w-full lg:w-1/2    basis-1/2   "
-      src={content.image}
+      src={chiefPresentation.image}
       alt="logo"
       width={345}
       height={518}

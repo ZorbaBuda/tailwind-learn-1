@@ -83,6 +83,10 @@
     transition-all duration-300 max-w-fit
   }
 
+  .containerPru {
+    @apply max-w-6xl
+  }
+
   /* clinique */
   .h1c {
     @apply text-[71.5px] lg:text-[82.5px] xl:text-[110px] tracking-tight leading-none font-manrope

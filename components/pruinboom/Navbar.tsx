@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence, MotionConfig } from "framer-motion"
 // import header data
-import { headerData, links } from '@/lib/data'
+import { headerData, links } from '@/lib/dataPruimboom'
 // import components
 import NavLinks from './NavLinks';
 
