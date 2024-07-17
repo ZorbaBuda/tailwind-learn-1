@@ -3,8 +3,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Provider } from "@/context/Provider";
 import TwSizeIndicator from "@/components/pruinboom/helpers/TwSizeIndicator";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/pruinboom/Footer";
+
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       {/* <body className={inter.className}> */}
-      <body>
+      <body className="bg-white text-black">
       <TwSizeIndicator />
         <Provider>
         

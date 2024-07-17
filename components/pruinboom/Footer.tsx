@@ -13,12 +13,12 @@ export default function Footer() {
     collaborationWith,
   } = footerData;
   return (
-    <footer className="section-light flex flex-col  bg-blue_dark text-white  text-base">
+    <footer className=" flex flex-col  bg-blue_dark text-white  text-sm ">
       {/* logo */}
-      <section className="flex flex-wrap gap-y-5 justify-around">
-      <Link href="/" className="flex   ">
+      <section className="section-light w-full flex flex-wrap gap-y-5 justify-around items-start
+      px-5 xl:px-0">
+      <Link href="/site1" className="flex   ">
         <Image
-          // className='w-[188px] h-[90px]'
           className="  "
           src="/img/pruinboom/logo-pruimboom-institute-white.svg"
           
@@ -64,6 +64,7 @@ export default function Footer() {
 
       <article>
         <p className="mb-6">{accreditedBy.title}</p>
+        <div className="flex flex-col gap-y-5">
         {accreditedBy.subitems.map((item, index) => (
           <Image
             key={index}
@@ -71,12 +72,13 @@ export default function Footer() {
             className=" "
             src={item}
             alt="logo"
-            width={88}
-            height={90}
+            width={160}
+            height={60}
           />
         ))}
-
+  </div>
         <p className="my-6">{collaborationWith.title}</p>
+        <div className="flex-col gap-y-5">
         {collaborationWith.subitems.map((item, index) => (
           <Image
             key={index}
@@ -84,10 +86,11 @@ export default function Footer() {
             className=" "
             src={item}
             alt="logo"
-            width={88}
-            height={90}
+            width={100}
+            height={98}
           />
         ))}
+        </div>
       </article>
       </section>
       <section className="flex">

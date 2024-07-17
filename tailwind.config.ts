@@ -45,7 +45,10 @@ const config: Config = {
       heroDesktop: "url('/img/celares/home/Cell_Shuttle_Hero_Shadow@2x.jpg')",
       heroMobile: "url('/img/celares/home/Home_Hero_Mobile@2x.jpg')",
       heroForm:  "url('/img/celares/home/bg-footer.jpg')",
+      careersDesktop: "url('/img/celares/home/Home_Careers_BG@2x-scaled.jpg')",
+      careersMobile: "url('/img/celares/home/Home_Careers_BG_Mobilev2@2x.jpg')",
       
+    
     },
     },
    

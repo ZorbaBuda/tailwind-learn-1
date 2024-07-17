@@ -60,7 +60,7 @@ export default function Navbar() {
       <div className='flex  justify-between h-full  px-[50px] '>
 
         {/* logo */}
-        <Link href="/" className="flex items-center  ">
+        <Link href="/site1" className="flex items-center  ">
             <Image
               // className='w-[188px] h-[90px]'
               className="  "
