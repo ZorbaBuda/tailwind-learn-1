@@ -7,53 +7,35 @@ import FadeUp from '../helpers/FadeUp'
 import Image, { StaticImageData } from 'next/image'
 import { howCanHelp } from '@/lib/dataPruimboom'
 
-type ContentProps = {
-    heading : {
-      p : string,
-      h2 : string
-  },
-    image: StaticImageData,
-    items: Item[]
-}
 
-type Item = {
-  num : string,
-  text: string
-}
 
 export default function ImgListSection() {
   return (
     <section className="section-light flex flex-col px-5">
     <PH2Heading content = {howCanHelp.heading} />
-    <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-10 gap-y-10 max-w-7xl mx-auto ">
+    <div className="relative grid md:grid-cols-2 grid-cols-1 lg:gap-x-10 gap-y-10 max-w-7xl mx-auto ">
      
-      <Image
-        className="mx-auto h-[570px] w-full object-cover object-top md:p-10    "
-        src={howCanHelp.image}
+     <ul>
+      {howCanHelp.images.map((item, index) => (
+        <FadeIn  key= {item} delay={1 * index} >
+           <Image
+         
+        className="absolute mx-auto h-[570px] w-full object-cover object-top md:p-10    "
+        src={item}
         alt="logo"
-        width={345}
-        height={518}
+        width={510}
+        height={809}
       />
+      </FadeIn>
+      ))}
    
-      <ul className=" prose p-5  flex flex-col justify-around md:gap-y-0 gap-y-10 ">
-       
-        <div className='flex flex-row gap-10'>
-        
-        <Link href={"/site1"} className="btn-prac inline-block">
-          SITE 1
-        </Link>
-      
-     
-          
-        <Link href={"/site2"} className="btn-prac inline-block">
-          SITE 2
-        </Link>
+   </ul>
 
-        <Link href={"/site3"} className="btn-prac inline-block">
-          SITE 3
-        </Link>
-       
-        </div>
+      <ul className=" prose p-5  flex flex-col justify-around md:gap-y-0 gap-y-10 ">
+       {howCanHelp.items.map(item => (
+          <NumTextCard key={item.num} num={item.num} text={item.text} />
+       ))}
+     
       </ul>
     </div>
   </section>

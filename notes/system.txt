@@ -1,0 +1,13 @@
+tandem básico:
+
+- base de datos mongo
+- admin dashboard + api : 
+- frontend ¿i18n?
+- dockerized
+
+
+tipos
+
+- web advaita
+- web tantra
+- web freelance portfolio

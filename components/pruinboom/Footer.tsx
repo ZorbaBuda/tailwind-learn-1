@@ -2,7 +2,6 @@ import React from "react";
 import { footerData } from "@/lib/dataPruimboom";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "@/public/img/logo.png";
 
 export default function Footer() {
   const {
@@ -21,16 +20,14 @@ export default function Footer() {
         <Image
           // className='w-[188px] h-[90px]'
           className="  "
-          src={Logo}
+          src="/img/pruinboom/logo-pruimboom-institute-white.svg"
+          
           alt="logo"
-          width={88}
-          height={90}
+          width={298.566}
+          height={23.435}
         />
 
-        <div className="text-3xl tracking-tighter ">
-          <span className="font-larken">Pruimboom</span>
-          <span className="font-larken_thin"> Institute</span>
-        </div>
+       
       </Link>
       <article>
         <p className="mb-6">{quickLinks.title}</p>

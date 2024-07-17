@@ -1,10 +1,10 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+
 
 type ArticleCardProps = {
     item : {
-        img: StaticImageData,
+        img: string,
         name: string,
         text: string
     },
@@ -40,9 +40,12 @@ function isEven (num : number) {
             <h1 className='h1'>{item.name}</h1>
             <p className='font-larken_thin text-lg'>{item.text}</p>
             <Link 
-               className="btn-plus"
+              
                href={"#"}
-               >+</Link>
+               >
+                <Image  src="/img/pruinboom/blob-button-plus.svg" alt="btn" width={60.588} height={48.91}/>
+               
+               </Link>
          </div>
 
     </li>

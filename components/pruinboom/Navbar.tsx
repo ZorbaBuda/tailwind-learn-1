@@ -1,21 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useMotionValueEvent, AnimatePresence, MotionConfig } from "framer-motion"
-// import header data
-import { headerData, links } from '@/lib/dataPruimboom'
-// import components
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import { headerData } from '@/lib/dataPruimboom'
 import NavLinks from './NavLinks';
 
 
 export default function Navbar() {
  
   const { logo } = headerData;
-  // header state
-  // const [isActive, setIsActive] = useState(false);
-  // nav mobile state
+  
   const [mobileNav, setMobileNav] = useState(false);
 
   const toggleMobileNav = () => {
@@ -65,22 +61,16 @@ export default function Navbar() {
 
         {/* logo */}
         <Link href="/" className="flex items-center  ">
-        
             <Image
               // className='w-[188px] h-[90px]'
               className="  "
               src={logo}
               alt="logo"
-              width={88}
-              height={90}
+              width={298.566}
+              height={23.435}
             />
+          
             
-              <div className='text-3xl tracking-tighter '>
-				<span className='font-larken'>Pruimboom</span>
-				<span className='font-larken_thin'> Institute</span>
-				</div> 
-             
-         
         </Link>
 
         {/* nav - initially hidden, show on desktop */}
