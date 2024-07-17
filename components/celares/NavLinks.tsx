@@ -72,58 +72,29 @@ const components: { title: string; href: string; description: string }[] = [
 export default function NavLinks() {
   return (
     <>
-      {links.map((link : LinkType) => (
-    <NavigationMenu key={link.hash} className=" list-none">
-
-    
+      {links.map((link: LinkType) => (
+        <NavigationMenu key={link.hash} className=" list-none ">
           <NavigationMenuItem >
-              <Link href={link.hash} >   <NavigationMenuTrigger>{link.name}</NavigationMenuTrigger></Link>
-          
-                  <NavigationMenuContent>
-              {link.innerLinks && link.innerLinks.map((innerLink) => (
-                    <ul className="flex flex-col gap-3 p-4 w-max bg-white shadow-2xl">
-                   
-                        <ListItem
-                          key={innerLink.hash}
-                          href={innerLink.hash}
-                        >
-                          {innerLink.name}
-                        </ListItem>
-                     
-                  
-                    </ul> ))}
+            <Link href={link.hash}>
+              {" "}
+              <NavigationMenuTrigger className="uppercase">{link.name}</NavigationMenuTrigger>
+            </Link>
 
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-     
- 
+            {link.innerLinks && (
+              <NavigationMenuContent>
+                <ul className="flex flex-col gap-3 p-2 w-max bg-white shadow-2xl">
+                  {link.innerLinks.map((innerLink) => (
+                    <ListItem key={innerLink.hash} href={innerLink.hash}>
+                      {innerLink.name}
+                    </ListItem>
+                  ))}{" "}
+                </ul>
+              </NavigationMenuContent>
+            )}
+          </NavigationMenuItem>
+        </NavigationMenu>
+      ))}
 
-
-    </NavigationMenu> ))}
-
-
-    <NavigationMenu className="border-2 border-black">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-       <Link href={'/site2'} >   <NavigationMenuTrigger>Getting started</NavigationMenuTrigger></Link>
-          <NavigationMenuContent>
-            <ul className="flex flex-col gap-3 p-2 w-max bg-white shadow-2xl ">
-            {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  href={component.href}
-                >
-                  {component.title}
-                </ListItem>
-              ))}
-           
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-      </NavigationMenuList>
-
-    </NavigationMenu>
     </>
   );
 }
@@ -143,7 +114,6 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-        
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>

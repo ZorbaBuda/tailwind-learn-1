@@ -80,13 +80,15 @@ export default function Navbar() {
 		 
 		   />
         </Link>
-        <div className=" border-l py-3 border-cViolet"></div>
+         <div className=" border-l py-3 border-cViolet"></div>
+ </div>
+       
          {/* nav - initially hidden, show on desktop */}
-         <div className='hidden lg:flex items-center '>
+         <div className='hidden lg:flex max-w-[700px]  items-center justify-between border-2 border-black" '>
           {/* <NavLinks /> */}
           <NavLinks />
           </div>
-        </div>
+       
 
 
         <AnimatePresence>
@@ -159,7 +161,7 @@ export default function Navbar() {
           initial="hide"
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
-          className="flex flex-col space-y-1 relative z-10 "
+          className="flex flex-col space-y-1 relative z-10 border-2 border-black"
         >
           <motion.span
             variants={{
