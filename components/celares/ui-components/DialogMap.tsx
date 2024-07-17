@@ -9,12 +9,22 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
+type StylesProps = {
+  classname: string;
+    top: string;
+    left: string;
+}
  
-export function DialogMap() {
+export function DialogMap({styles} : {styles : StylesProps}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button>Edit Profile</button>
+        <button
+       className={styles.classname}
+       style={{top: `${styles.top}`, left: `${styles.left}`}}
+        >
+        <span>+</span>
+      </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] bg-white">
         <DialogHeader>

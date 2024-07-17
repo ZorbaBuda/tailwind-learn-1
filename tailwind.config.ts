@@ -46,6 +46,7 @@ const config: Config = {
     backgroundImage: {
       heroDesktop: "url('/img/celares/home/Cell_Shuttle_Hero_Shadow@2x.jpg')",
       heroMobile: "url('/img/celares/home/Home_Hero_Mobile@2x.jpg')",
+      heroForm:  "url('/img/celares/home/bg-footer.jpg')",
       
     },
     },

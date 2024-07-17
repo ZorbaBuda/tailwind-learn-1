@@ -1,4 +1,5 @@
 import HomeAnimationSection from "@/components/celares/sections/HomeAnimationSection";
+import HomeForm from "@/components/celares/sections/HomeForm";
 import HomeHero from "@/components/celares/sections/HomeHero";
 import HomeRegsSection from "@/components/celares/sections/HomeRegsSection";
 import HomeTechSection from "@/components/celares/sections/HomeTechSection";
@@ -12,6 +13,7 @@ export default function Home() {
      <HomeRegsSection  />
      <HomeAnimationSection />
      <HomeTechSection />
+     <HomeForm />
   
     </main>
   );

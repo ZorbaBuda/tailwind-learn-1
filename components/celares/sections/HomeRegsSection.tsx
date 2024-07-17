@@ -27,6 +27,7 @@ type ContentProps = {
         size: string;
         top: string;
         left: string;
+        video: string
     } | {
         factory: string;
         description: string;

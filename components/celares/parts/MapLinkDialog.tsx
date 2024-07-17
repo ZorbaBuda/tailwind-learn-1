@@ -7,12 +7,13 @@ import { DialogMap } from "../ui-components/DialogMap";
 import { TooltipMap } from "../ui-components/TooltipMap";
 
 type ContentProps = {
-  exists: boolean;
-  factory: string;
-  description: string;
-  size?: string;
-  top: string;
-  left: string;
+  exists: boolean
+  factory: string
+  description: string
+  size?: string
+  top: string
+  left: string
+  video?: string 
 };
 
 export default function MapLinkDialog({ content }: { content: ContentProps }) {
@@ -33,28 +34,28 @@ export default function MapLinkDialog({ content }: { content: ContentProps }) {
     };
   });
 
-  const { exists, factory, description, size, top, left } = content;
+  const { exists, factory, description, size, top, left, video } = content;
 
- 
+  const styles = {
+    classname : `
+      rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
+       absolute  ${
+          exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
+        }`,
+      top: top,
+      left: left
+      // style : `{top: `${top}`, left: `${left}`}`     
+  }
+
+ const contentData = {factory, description, size, video}
   return (
     <>
-      <button
-      //   className={`
-      // rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
-      //  absolute ${top} ${left} ${
-      //     exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
-      //   }`}
-      style={{top: `${top}`, left: `${left}`}}
-      className={`
-        rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
-         absolute  ${
-            exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
-          }`}
-       >
-        <span>{isLg ? "isLg" : "isNotLg"}</span>
-      </button>
-      {/* <DialogMap /> */}
-      <TooltipMap />
+     
+      {!isLg ?  (
+      <DialogMap styles={styles}  />
+      ) : (
+      <TooltipMap contentData ={contentData} styles={styles} />
+       )}
 
       {/* <Link className="group inline-flex items-center gap-x-3" href={'#'}>
        <div className="text-black hover:text-cBlueLight bg-cBlueLight hover:bg-cBlue transition duration-300 rounded-full p-1 "><GoArrowRight /></div>
