@@ -74,20 +74,23 @@ export default function Navbar() {
 					  lg:max-w-none lg:px-[90px]
 					  2xl:max-w-[1340px] 2xl:px-0"
       >
-        <div className="inline-flex  gap-x-9 items-center">
+        <div className="inline-flex  gap-x-9 items-center ">
         <Link href="/site3">
           <Image src={logo} alt="logo" width={150} height={28} 
 		 
 		   />
         </Link>
          <div className=" border-l py-3 border-cViolet"></div>
- </div>
-       
-         {/* nav - initially hidden, show on desktop */}
-         <div className='hidden lg:flex max-w-[700px]  items-center justify-between border-2 border-black" '>
+            <div className='hidden lg:flex flex-grow  items-center justify-between border-2 border-black" '>
           {/* <NavLinks /> */}
           <NavLinks />
           </div>
+ </div>
+       
+         {/* nav - initially hidden, show on desktop */}
+       
+      
+        <button className="lg:flex flex-none btnDarktoLight hidden ">PARTNER WITH US</button>
        
 
 
@@ -161,7 +164,7 @@ export default function Navbar() {
           initial="hide"
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
-          className="flex flex-col space-y-1 relative z-10 border-2 border-black"
+          className="flex flex-col space-y-1 relative z-10 border-2 border-black lg:hidden"
         >
           <motion.span
             variants={{

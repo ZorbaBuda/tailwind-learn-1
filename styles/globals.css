@@ -108,6 +108,20 @@
     ;
   }
 
+  .btnDarktoLight {
+    @apply      uppercase px-5 py-3 tracking-widest font-satoshi_medium transition-all duration-300   text-sm
+    text-white hover:text-cBlue bg-cBlue hover:bg-cBlueLight 
+    rounded-3xl   max-w-fit
+    ;
+  }
+
+  .btnGrayToBlue {
+    @apply      uppercase px-8 py-3 tracking-wider font-satoshi_medium transition-all duration-300   text-sm
+    text-cBlue hover:text-cBlue bg-white hover:bg-cBlueLight 
+    rounded-3xl   max-w-fit
+    ;
+  }
+
   /* celares */
   .h1cel {
     @apply  leading-none text-[39px] sm:text-[50px] lg:text-[56px] xl:text-[63px] font-satoshi_medium
@@ -117,7 +131,7 @@
     @apply  leading-tight text-[36px] sm:text-[40px] lg:text-[50px] xl:text-[50px] 
   }
 
-  Link {
+  .link {
     @apply max-w-fit
   }
 }
