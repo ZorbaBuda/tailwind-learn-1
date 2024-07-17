@@ -14,12 +14,12 @@ import { headerData, links } from "@/lib/dataClinique";
 import { usePathname } from "next/navigation";
 import { logo } from "@/lib/dataCelares";
 import NavLinks from "./NavLinks";
+import { DialogGeneral } from "./ui-components/DialogGeneral";
 
 export default function Navbar() {
   const pathname = usePathname();
   // console.log(pathname)
 
-  
   // header state
   // const [isActive, setIsActive] = useState(false);
   // nav mobile state
@@ -61,38 +61,36 @@ export default function Navbar() {
       variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`${transparent ? " bg-gradient-to-b from-white to-transparent  " : "bg-white"}
-      
-
-       h-[75px] fixed top-0   z-20 w-full  transition-all duration-700  `}
+      className={`${
+        transparent
+          ? " bg-gradient-to-b from-white to-transparent  "
+          : "bg-white"
+      } h-[75px] fixed top-0   z-20 w-full  transition-all duration-700  `}
     >
       <div
         className="flex  justify-between mx-auto items-center h-full  
-		              px-5 
-	                 
-					 
-					  lg:max-w-none lg:px-[90px]
-					  2xl:max-w-[1340px] 2xl:px-0"
-      >
-        <div className="inline-flex  gap-x-9 items-center ">
-        <Link href="/site3">
-          <Image src={logo} alt="logo" width={150} height={28} 
-		 
-		   />
-        </Link>
-         <div className=" border-l py-3 border-cViolet"></div>
-            <div className='hidden lg:flex flex-grow  items-center justify-between border-2 border-black" '>
-          {/* <NavLinks /> */}
-          <NavLinks />
+		              px-5 lg:max-w-none  2xl:max-w-[1340px] 2xl:px-0" >
+                    
+        <div className="inline-flex  gap-x-6 items-center  ">
+          <Link href="/site3" className="pr-3">
+            <Image src={logo} alt="logo" width={150} height={28} />
+          </Link>
+          <div className="hidden lg:flex border-l py-3  border-cViolet"></div>
+          <div className='hidden lg:flex xl:gap-x-[27px] lg:gap-x-0 items-center justify-between" '>
+            {/* <NavLinks /> */}
+            <NavLinks />
           </div>
- </div>
-       
-         {/* nav - initially hidden, show on desktop */}
-       
-      
-        <button className="lg:flex flex-none btnDarktoLight hidden ">PARTNER WITH US</button>
-       
+        </div>
 
+        {/* nav - initially hidden, show on desktop */}
+
+        <DialogGeneral>
+          <button className="lg:flex flex-none btnDarktoLight hidden ">
+            PARTNER WITH US
+          </button>
+        </DialogGeneral>
+
+        {/* {mobileNav && <div className="bg-cBlue w-full min-h-screen"></div>} */}
 
         <AnimatePresence>
           {mobileNav && (
@@ -127,35 +125,9 @@ export default function Navbar() {
                 initial="hide"
                 animate="show"
                 exit="hide"
-                className="  fixed inset-0 bg-[#26355D] bg-opacity-95 p-6 min-h-screen flex flex-col justify-center space-y-10 lg:hidden"
+                className="  fixed inset-0 bg-[#274EA9]  p-6 min-h-screen flex flex-col justify-center space-y-10 lg:hidden"
               >
-                <motion.ul
-                  variants={{
-                    hide: {
-                      y: "25%",
-                      opacity: 0,
-                    },
-                    show: {
-                      y: "0%",
-                      opacity: 1,
-                    },
-                  }}
-                  className="list-none space-y-10 mx-auto"
-                >
-                  {links.map((item: Link, index) => {
-                    return (
-                      <li key={index}>
-                        <Link
-                          className={`text-5xl font-semibold text-white `}
-                          href={item.hash}
-                          onClick={toggleMobileNav}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </motion.ul>
+             
               </motion.div>
             </MotionConfig>
           )}
@@ -164,7 +136,7 @@ export default function Navbar() {
           initial="hide"
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
-          className="flex flex-col space-y-1 relative z-10 border-2 border-black lg:hidden"
+          className="flex flex-col space-y-[6px] relative z-10  lg:hidden"
         >
           <motion.span
             variants={{
@@ -173,12 +145,12 @@ export default function Navbar() {
               },
               show: {
                 rotate: 45,
-                y: 5,
+                y: 7.5,
               },
             }}
             className={` ${
-              transparent ? "bg-white" : "bg-black"
-            }  h-[2px] block w-7 font-bold`}
+              mobileNav ? "bg-white" : "bg-cViolet"
+            }  h-[2px] block w-10 font-bold`}
           ></motion.span>
           <motion.span
             variants={{
@@ -190,8 +162,8 @@ export default function Navbar() {
               },
             }}
             className={` ${
-              transparent ? "bg-white" : "bg-black"
-            }  h-[2px] block w-6`}
+              mobileNav ? "bg-white" : "bg-cViolet"
+            }  h-[2px] block w-10`}
           ></motion.span>
           <motion.span
             variants={{
@@ -200,10 +172,12 @@ export default function Navbar() {
               },
               show: {
                 rotate: -45,
-                y: -5,
+                y: -7.5,
               },
             }}
-            className={` ${transparent ? "bg-white" : "bg-black"}  h-[2px]  w-6`}
+            className={` ${
+              mobileNav ? "bg-white" : "bg-cViolet"
+            }  h-[2px]  w-10`}
           ></motion.span>
         </motion.button>
       </div>

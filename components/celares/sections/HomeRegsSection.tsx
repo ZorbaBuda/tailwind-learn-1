@@ -38,7 +38,7 @@ type ContentProps = {
 export default function HomeRegsSection() {
   return (
     <section className="py-[90px] xl:py-[124px] bg-white">
-        <div className='px-5'>
+        <div className='containerCel'>
             <HeaderPart content={homeRegs.headerPart} />
         {/* <div className='flex flex-col gap-y-8 mb-16 lg:mb-0'>
             <div className='inline-flex items-center gap-x-4'> <Image src={IconLabel} alt="logo" width={34} height={34} /><span className='tracking-[4px]'>{content.title}</span> </div>
@@ -46,10 +46,19 @@ export default function HomeRegsSection() {
        <ArrowButton text={content.linkText} hash={content.linkHref} />
      
         </div> */}
-        <div className='flex flex-col lg:flex-row-reverse items-end'>
-        <div>
-            <div className='relative border-2 border-black'>
-        <Image className="" src={MapImage} alt="logo" width={2012} height={1184} />
+        <div className='lg:relative flex flex-col-reverse lg:flex-row items-end border-2 border-black'>
+        <ul className='lg:absolute'>
+            {homeRegs.itemsPromo.map(item => (
+                <li key={item.title} className='grid grid-cols-2 gap-y-5 border-t border-t-cGray pt-2'>
+                    <div className='text-cBlue font-satoshi_medium tracking-[3px]'>{item.title}</div>
+                    <div>{item.text}</div>
+                </li>
+            ))}
+        </ul>
+        <div className='flex flex-col border-2 border-red-400'>
+            <div className='relative border-2 border-black lg:w-[63%]  '>
+        <Image className="" 
+           src={MapImage} alt="logo" width={2012} height={1184} />
 
         {/* <div className={`absolute ${homeRegs.factories[0].top} ${homeRegs.factories[0].left} border-2 border-pink-500`}>+</div> */}
         {/* <div className={`absolute ${homeRegs.factories[0].top} ${homeRegs.factories[0].left} border-2 border-pink-500`}>hiii</div> */}
@@ -67,14 +76,7 @@ export default function HomeRegsSection() {
             <div>PLANNED SMART FACTORIES</div>
         </div>
         </div>
-        <ul>
-            {homeRegs.itemsPromo.map(item => (
-                <li key={item.title} className='grid grid-cols-2 gap-y-5 border-t border-t-cGray pt-2'>
-                    <div className='text-cBlue font-satoshi_medium tracking-[3px]'>{item.title}</div>
-                    <div>{item.text}</div>
-                </li>
-            ))}
-        </ul>
+       
         </div>
         </div>
     </section>

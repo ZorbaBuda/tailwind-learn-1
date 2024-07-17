@@ -108,6 +108,13 @@
     ;
   }
 
+  .navLink {
+    @apply      uppercase px-2 py-[3px] tracking-widest font-satoshi_medium transition-all duration-300   text-sm
+    hover:text-white   hover:bg-cBlue text-[#2C346D]
+    rounded-xl   max-w-fit
+    ;
+  }
+
   .btnDarktoLight {
     @apply      uppercase px-5 py-3 tracking-widest font-satoshi_medium transition-all duration-300   text-sm
     text-white hover:text-cBlue bg-cBlue hover:bg-cBlueLight 
@@ -116,7 +123,7 @@
   }
 
   .btnGrayToBlue {
-    @apply      uppercase px-8 py-3 tracking-wider font-satoshi_medium transition-all duration-300   text-sm
+    @apply      uppercase px-5 py-3 tracking-wider font-satoshi_medium transition-all duration-300   text-sm
     text-cBlue hover:text-cBlue bg-white hover:bg-cBlueLight 
     rounded-3xl   max-w-fit
     ;
@@ -133,5 +140,9 @@
 
   .link {
     @apply max-w-fit
+  }
+
+  .containerCel {
+    @apply mx-auto px-5 lg:max-w-none  2xl:max-w-[1340px] 2xl:px-0;
   }
 }

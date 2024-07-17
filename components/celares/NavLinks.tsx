@@ -77,7 +77,7 @@ export default function NavLinks() {
           <NavigationMenuItem >
             <Link href={link.hash}>
               {" "}
-              <NavigationMenuTrigger className="uppercase">{link.name}</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="navLink">{link.name}</NavigationMenuTrigger>
             </Link>
 
             {link.innerLinks && (
