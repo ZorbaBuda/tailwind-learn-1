@@ -5,39 +5,35 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import ButtonCoordinates from "../buttons/ButtonCoordinates";
 
-type StylesProps = {
-  classname: string;
-    top: string;
-    left: string;
-}
-
-type ContentDataProps = {
+type ContentProps = {
+  exists: boolean
   factory: string
   description: string
-  size: string | undefined
-  video: string | undefined
-}
+  size?: string
+  top: string
+  left: string
+  video?: string 
+};
+
  
-export function TooltipMap({styles, contentData} : {styles : StylesProps, contentData : ContentDataProps}) {
+export function TooltipMap({content} : {content : ContentProps}) {
+  const {exists, factory, description, size, top, left, video} = content
+ const coords = {exists, top, left}
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-        <button
-       className={styles.classname}
-       style={{top: `${styles.top}`, left: `${styles.left}`}}
-        >
-            <span>+</span>
-            </button>
+        <ButtonCoordinates coords = {coords} />
         </TooltipTrigger>
-      <TooltipCard contentData={contentData} />
+      <TooltipCard contentData={content} />
       </Tooltip>
     </TooltipProvider>
   )
 }
 
-const TooltipCard = ({contentData} : {contentData : ContentDataProps}) => {
+const TooltipCard = ({contentData} : {contentData : ContentProps}) => {
 
   return  (
   <TooltipContent className="flex flex-col bg-white">

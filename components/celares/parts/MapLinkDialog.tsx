@@ -36,25 +36,14 @@ export default function MapLinkDialog({ content }: { content: ContentProps }) {
 
   const { exists, factory, description, size, top, left, video } = content;
 
-  const styles = {
-    classname : `
-      rounded-full h-10 w-10 flex items-center justify-center border-[8px] max-w-
-       absolute  ${
-          exists ? "bg-cBlueLight border-cBlueLight " : "bg-cBlue border-cBlue"
-        }`,
-      top: top,
-      left: left
-      // style : `{top: `${top}`, left: `${left}`}`     
-  }
 
- const contentData = {factory, description, size, video}
   return (
     <>
      
       {!isLg ?  (
-      <DialogMap styles={styles}  />
+      <DialogMap content={content}  />
       ) : (
-      <TooltipMap contentData ={contentData} styles={styles} />
+      <TooltipMap content ={content} />
        )}
 
       {/* <Link className="group inline-flex items-center gap-x-3" href={'#'}>

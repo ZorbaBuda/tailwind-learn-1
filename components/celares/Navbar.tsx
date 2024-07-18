@@ -86,7 +86,7 @@ export default function Navbar() {
       } h-[75px] fixed top-0   z-20 w-full  transition-all duration-700  `}
     >
       <div
-        className="flex  justify-between mx-auto items-center h-full  
+        className=" flex  justify-between mx-auto items-center h-full  
 		              px-5 lg:max-w-none  2xl:max-w-[1340px] 2xl:px-0"
       >
         <div className="inline-flex  gap-x-6 items-center  ">
@@ -112,12 +112,12 @@ export default function Navbar() {
 
         {/* <AnimatePresence> */}
         {mobileNav && (
-          <div className="fixed inset-0 bg-[#274EA9]  p-5 min-h-screen  lg:hidden">
-            <Link href="/site3" className="pr-3">
+          <div className="fixed inset-0 bg-[#274EA9] min-h-screen  flex flex-col    lg:hidden">
+            <Link href="/site3" className="pr-10 mt-[31px]">
               <Image src={LogoWhite} alt="logo" width={150} height={28} />
             </Link>
 
-            <div className="flex flex-col justify-center space-y-10 ">
+            <div className="flex flex-col justify-center space-y-16 ">
               <ul className="flex flex-col text-white">
                 {links.map((link) => (
                   <Link
@@ -129,6 +129,31 @@ export default function Navbar() {
                   </Link>
                 ))}
               </ul>
+
+              {/* <ul className="flex flex-col text-white">
+                {links.map((link) => (
+                  <Link
+                    className="font-satoshi_medium text-4xl border-b-[0.5px] border-c"
+                    href={link.hash}
+                    key={link.hash}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </ul>
+
+              <ul className="flex flex-col text-white">
+                {links.map((link) => (
+                  <Link
+                    className="font-satoshi_medium text-4xl border-b-[0.5px] border-c"
+                    href={link.hash}
+                    key={link.hash}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </ul> */}
+
             </div>
             <DialogGeneral>
           <button className=" btnDarktoLight  ">
@@ -136,42 +161,7 @@ export default function Navbar() {
           </button>
         </DialogGeneral>
           </div>
-          // <MotionConfig
-          //   transition={{
-          //     type: "spring",
-          //     bounce: 0.1,
-          //   }}
-          // >
-          //   <motion.div
-          //     key="mobile-nav"
-          //     variants={{
-          //       hide: {
-          //         x: "100%",
-          //         transition: {
-          //           type: "spring",
-          //           bounce: 0.1,
-          //           when: "afterChildren",
-          //           staggerChildren: 0.25,
-          //         },
-          //       },
-          //       show: {
-          //         x: "0%",
-          //         transition: {
-          //           type: "spring",
-          //           bounce: 0.1,
-          //           when: "beforeChildren",
-          //           staggerChildren: 0.25,
-          //         },
-          //       },
-          //     }}
-          //     initial="hide"
-          //     animate="show"
-          //     exit="hide"
-          //     className="  fixed inset-0 bg-[#274EA9]  p-6 min-h-screen flex flex-col justify-center space-y-10 lg:hidden"
-          //   >
-
-          //   </motion.div>
-          // </MotionConfig>
+       
         )}
         {/* </AnimatePresence> */}
         <motion.button

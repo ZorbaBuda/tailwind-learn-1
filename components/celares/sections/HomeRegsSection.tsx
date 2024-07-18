@@ -6,6 +6,8 @@ import ArrowButton from "../buttons/ArrowButton";
 import HeaderPart from "../parts/HeaderPart";
 import { homeRegs } from "@/lib/dataCelares";
 import MapLink from "../parts/MapLinkDialog";
+import ButtonCoordinates from "../buttons/ButtonCoordinates";
+import SvgAnimation1 from "../parts/SvgAnimation1";
 
 type ContentProps = {
   headerPart: {
@@ -44,28 +46,29 @@ export default function HomeRegsSection() {
       <div className="containerCel">
         {/* header  */}
         <HeaderPart content={homeRegs.headerPart} />
+      
      
       {/* flex layout */}
-        <div className="lg:relative flex flex-col-reverse lg:flex-row items-end border-2 border-black ">
+        <div className="lg:relative flex flex-col-reverse lg:flex-row items-end  ">
          {/* left */}
          <div className="lg:w-[32%] w-0 "></div>
-          <ul className="lg:absolute lg:w-[35%] flex flex-col gap-y-[27px]">
+          <ul className="lg:absolute lg:w-[40%] flex flex-col gap-y-[27px]">
             {homeRegs.itemsPromo.map((item) => (
               <li
                 key={item.title}
-                className="grid grid-cols-2  border-t border-t-cGray pt-2 "
+                className="grid grid-cols-2  border-t border-t-cGray pt-2 leading-5 "
               >
-                <div className=" w-[190px] text-cBlue  font-satoshi_medium tracking-[3px] text-[18px] border-2 border-yellow-700">
+                <div className=" w-[190px] text-cBlue  font-satoshi_medium tracking-[3px] text-[16px] xl:text-[18px] ">
                   {item.title}
                 </div>
-                <div className="text-[20px]  border-2 border-yellow-700">{item.text}</div>
+                <div className="xl:text-[20px] text-[#0d112f] flex text-[18px] ">{item.text}</div>
               </li>
             ))}
           </ul>
 
           {/* right  map section */}
-          <div className="flex flex-col border-2 border-red-400 lg:w-[68%]">
-            <div className="relative border-2 border-black   ">
+          <div className="flex flex-col  lg:w-[68%]">
+            <div className="relative    ">
               <Image
                 className=""
                 src={MapImage}

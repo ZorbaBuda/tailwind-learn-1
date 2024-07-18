@@ -1,6 +1,9 @@
+'use client'
 import { StaticImageData } from "next/image";
 import  Image  from "next/image";
-import ArrowButton from "../buttons/ArrowButton";
+import {ArrowButtonText} from "../buttons/ArrowButton";
+import { useState, useEffect } from "react";
+import FadeIn from "@/components/pruinboom/helpers/FadeIn";
 
 type ContentProps = {
     title: string;
@@ -20,7 +23,25 @@ type ContentProps = {
 
 
 export default function TechListSlider({content} : {content : ContentProps}) {
+
+  const [isLg, setIsLg] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsLg(true);
+      } else setIsLg(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
   return (
+    <FadeIn>
     <div className="flex flex-col lg:flex-row-reverse">
         {typeof content.image === "string" ? (
            <iframe
@@ -35,8 +56,9 @@ export default function TechListSlider({content} : {content : ContentProps}) {
         <div>
             <div>{content.title}</div>
             <div>{content.description}</div>
-            <ArrowButton text={content.linkText} hash={content.linkHash} />
+            <ArrowButtonText text={content.linkText} hash={content.linkHash} />
         </div>
     </div>
+    </FadeIn>
   )
 }

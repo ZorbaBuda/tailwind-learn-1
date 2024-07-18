@@ -8,23 +8,34 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import ButtonCoordinates from "../buttons/ButtonCoordinates";
 
-type StylesProps = {
-  classname: string;
-    top: string;
-    left: string;
-}
+type ContentProps = {
+  exists: boolean
+  factory: string
+  description: string
+  size?: string
+  top: string
+  left: string
+  video?: string 
+};
+
+
  
-export function DialogMap({styles} : {styles : StylesProps}) {
+export function DialogMap({content} : {content : ContentProps}) {
+
+ const {exists, factory, description, size, top, left, video} = content
+ const coords = {exists, top, left}
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button
+        <ButtonCoordinates coords = {coords} />
+        {/* <button
        className={styles.classname}
        style={{top: `${styles.top}`, left: `${styles.left}`}}
         >
         <span>+</span>
-      </button>
+      </button> */}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] bg-white">
         <DialogHeader>

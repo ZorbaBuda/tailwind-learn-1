@@ -35,13 +35,13 @@ interface Props {
    
   }
 
-export default function FadeUp({delay, children, classname} : Props) {
+export default function FadeIn({delay, children, classname} : Props) {
   return (
 
     
     <motion.section
    
-    variants={variants(delay ? delay : 0)}
+    variants={variants(delay ? delay : 0.5)}
     initial='hidden'
     whileInView={'show'}
     viewport={{ once: false, amount: 0.1 }}
