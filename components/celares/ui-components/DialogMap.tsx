@@ -25,9 +25,7 @@ type ContentProps = {
 
  
 export function DialogMap({content} : {content : ContentProps}) {
-   const MyPageRef = React.createRef<HTMLButtonElement>();
-
-
+   
 
  const {exists, factory, description, size, top, left, video} = content
  const coords = {exists, top, left}
