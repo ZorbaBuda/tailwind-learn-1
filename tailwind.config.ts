@@ -31,7 +31,8 @@ const config: Config = {
        cGray: '#C0C9DA',
        cGrayLight:'#EDF2F6',
        cBlueLight:'#2EEAFF',
-       cViolet: '#454C7D'
+       cViolet: '#454C7D',
+       black_op: '#282c4bbf'
      },
       fontFamily: {
       larken: ["larken", "serif"],

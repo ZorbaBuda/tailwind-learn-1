@@ -2,12 +2,13 @@ import IconLabel from "@/public/img/celares/svg/icon-label.svg";
 import Image from "next/image";
 import Link from "next/link";
 import MapImage from "@/public/img/celares/home/map-services.png";
-import ArrowButton from "../buttons/ArrowButton";
+import {ArrowButton} from "../buttons/ArrowButton";
 import HeaderPart from "../parts/HeaderPart";
 import { homeRegs } from "@/lib/dataCelares";
 import MapLink from "../parts/MapLinkDialog";
 import ButtonCoordinates from "../buttons/ButtonCoordinates";
 import SvgAnimation1 from "../parts/SvgAnimation1";
+import { FaCircle } from "react-icons/fa";
 
 type ContentProps = {
   headerPart: {
@@ -56,12 +57,12 @@ export default function HomeRegsSection() {
             {homeRegs.itemsPromo.map((item) => (
               <li
                 key={item.title}
-                className="grid grid-cols-2  border-t border-t-cGray pt-2 leading-5 "
+                className="grid grid-cols-2  border-t border-t-cGray pt-2  "
               >
-                <div className=" w-[190px] text-cBlue  font-satoshi_medium tracking-[3px] text-[16px] xl:text-[18px] ">
+                <div className=" w-[190px] text-cBlue  font-satoshi_medium tracking-[3px] text-[16px] xl:text-[18px] leading-[19.2px] ">
                   {item.title}
                 </div>
-                <div className="xl:text-[20px] text-[#0d112f] flex text-[18px] ">{item.text}</div>
+                <div className="xl:text-[20px] text-[#282c4bbf] flex text-[18px] leading-[23.4px] ">{item.text}</div>
               </li>
             ))}
           </ul>
@@ -81,9 +82,9 @@ export default function HomeRegsSection() {
                 <MapLink key={item.factory} content={item} />
               ))}
             </div>
-            <div className="flex flex-col lg:flex-row">
-              <div>EXISTING SMART FACTORIES</div>
-              <div>PLANNED SMART FACTORIES</div>
+            <div className="flex flex-col lg:flex-row text-black_op text-sm lg:text-base">
+              <div className="inline-flex items-center"><FaCircle className="text-lg text-cBlueLight rounded-full p-1"/>EXISTING SMART FACTORIES</div>
+              <div className="inline-flex items-center"><FaCircle className="text-lg text-cBlue rounded-full p-1"/>PLANNED SMART FACTORIES</div>
             </div>
           </div>
         </div>

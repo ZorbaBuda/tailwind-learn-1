@@ -1,36 +1,29 @@
 'use client'
-import React, { useState, forwardRef} from "react";
+import React, { useState, forwardRef, ForwardRefRenderFunction } from "react";
 
+// https://www.youtube.com/watch?v=SrmTDrN1lkU
 
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>
-     {
-  asChild?: boolean,
-  data: {
-    exists: boolean,
-    top: string,
-    left : string
-  }
+type ContentProps = {
+  exists: boolean;
+  top: string;
+  left: string;
+  //  ref : React.RefObject<HTMLButtonElement>
 }
+ export type Ref = HTMLButtonElement;
 
 
-
-
-// const ButtonCoordinates = forwardRef<Ref, ContentProps>((content , ref) => {
-  const ButtonCoordinates = forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, data, asChild = false, ...props }, ref) => {
+const ButtonCoordinates = forwardRef<Ref, ContentProps>((content , ref) => {
+  // const ButtonCoordinates = ({content , ref} : {content : ContentProps, ref: Ref}) => {
 
     const [mouseOver, setMouseOver] = useState(false)
-    const {exists, top, left} = data
+    const {exists, top, left} = content
 
   return (
 
     <button 
-     ref={ref}
+   ref={ref}
     onMouseEnter={() => setMouseOver(!mouseOver)}
     onMouseLeave={() => setMouseOver(!mouseOver)}
-    {...props}
     
        className={`absolute rounded-full h-9 w-9 ${ exists ? 'bg-cBlueLight/30' :  'bg-cBlue/30'} `}
        style={{top: `${top}`, left: `${left}`}}

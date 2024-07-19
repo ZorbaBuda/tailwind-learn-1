@@ -6,6 +6,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import ButtonCoordinates from "../buttons/ButtonCoordinates";
+import { DialogGeneral } from "./DialogGeneral";
+import React from "react";
+import { ArrowButton } from "../buttons/ArrowButton";
+import { Button } from "@/components/ui/button";
 
 type ContentProps = {
   exists: boolean
@@ -19,17 +23,22 @@ type ContentProps = {
 
  
 export function TooltipMap({content} : {content : ContentProps}) {
+ 
   const {exists, factory, description, size, top, left, video} = content
  const coords = {exists, top, left}
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
-        <ButtonCoordinates coords = {coords} />
+        <TooltipTrigger asChild >
+        {/* <ButtonCoordinates variant="outline">Button</Button> */}
+        <ButtonCoordinates data = {coords} />
+        {/* <ButtonCoordinates coords = {coords} /> */}
         </TooltipTrigger>
       <TooltipCard contentData={content} />
       </Tooltip>
     </TooltipProvider>
+ 
+   
   )
 }
 

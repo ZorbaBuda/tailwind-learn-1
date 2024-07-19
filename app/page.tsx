@@ -20,6 +20,14 @@ export default function Home() {
         <Link href={"/site3"} className="btn-prac inline-block">
           Celares
         </Link>
+
+        <Link href={"/tailwind"} className="btn-prac inline-block">
+          Tailwind
+        </Link>
+
+        <Link href={"/react"} className="btn-prac inline-block">
+          Celares
+        </Link>
        
         </div>
 
