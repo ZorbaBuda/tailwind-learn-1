@@ -32,6 +32,7 @@ const config: Config = {
        cGrayLight:'#EDF2F6',
        cBlueLight:'#2EEAFF',
        cViolet: '#454C7D',
+       cBlueDark: '#0D112F',
        black_op: '#282c4bbf'
      },
       fontFamily: {
