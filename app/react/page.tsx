@@ -1,7 +1,10 @@
+import UseState from "@/components/react/UseState";
 
 
 export default function page() {
   return (
-    <div>page</div>
+   <section className="pt-20 px-10">
+    <UseState />
+   </section>
   )
 }

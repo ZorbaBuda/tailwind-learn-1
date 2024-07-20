@@ -11,12 +11,14 @@ type ContentProps = {
     linkText: string;
     linkHash: string;
     image: StaticImageData;
+    item: string;
 } | {
     title: string;
     description: string;
     linkText: string;
     linkHash: string;
     image: string;
+    item: string;
 }
 
 
@@ -42,16 +44,17 @@ export default function TechListSlider({content} : {content : ContentProps}) {
   });
   return (
     <FadeIn>
-    <div className="flex flex-col lg:flex-row-reverse">
+    <div  id={`sticky-slider-block-${content.item}`} className="flex flex-col lg:flex-row-reverse">
         {typeof content.image === "string" ? (
            <iframe
-         className="border-0"
+
+         className="border-0 "
           src={content.image}
            title="Accelerating Access to Life-Saving Cell Therapies" 
           allowFullScreen
            /> 
         ) : (
-         <Image src={content.image} alt="logo" width={1623} height={1153} />
+         <Image src={content.image} alt="logo"  />
         )}
         <div>
             <div>{content.title}</div>
