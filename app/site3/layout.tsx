@@ -9,7 +9,7 @@ export default function PniLayout({
     children: React.ReactNode
   }) {
     return (
-      <section className="font-satoshi">
+      <section className="font-satoshi scroll-smooth ">
         <Navbar />
    
         {children}

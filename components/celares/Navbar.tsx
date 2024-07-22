@@ -81,7 +81,7 @@ export default function Navbar() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={`${
         transparent
-          ? " bg-gradient-to-b from-white to-transparent  "
+          ? " bg-transparent  "
           : "bg-white"
       } h-[75px] fixed top-0   z-20 w-full  transition-all duration-700  `}
     >

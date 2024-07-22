@@ -1,13 +1,42 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { homeTech } from "@/lib/dataCelares";
 import HeaderPart from "../parts/HeaderPart";
 import TechListSlider from "../parts/TechListSlider";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { useInView, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
+import FadeIn from "@/components/pruinboom/helpers/FadeIn";
 
 export default function HomeTechSection() {
+
+  const { headerPart, sliderItems} = homeTech
   const [isLg, setIsLg] = useState(false);
+  const [currentItem, setCurrentItem] = useState(0)
+
+  const [height, setHeight] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+
+   const section = useRef<HTMLDivElement>(null)
+  const isInView = useInView(section)
+
+  const { scrollY, scrollYProgress } = useScroll({container: section});
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+     console.log(scrollYProgress.get())
+  
+  });
+
+ 
+
+  console.log(isInView)
+
+  useEffect(() => {
+  if(ref && ref.current){
+     setHeight(ref.current.clientHeight)
+     console.log(ref.current.clientHeight)
+    }
+  })
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,31 +67,39 @@ export default function HomeTechSection() {
 
   return (
     <section
+     ref={section}
       id="home-tech-section"
-      className="section-light bg-cGrayLight min-h-screen"
+      className={`section-light bg-cGrayLight min-h-screen
+         ${isLg && isInView ? "sticky top-0" : "block"}`}
     >
       <div className="containerCel">
-        <div className={`${isLg ? "sticky top-0" : "block"}`}>
-          <HeaderPart content={homeTech.headerPart} />
-        </div>
+        <div  className={``}>
+          <HeaderPart content={headerPart} />
+         </div>
         {isLg ? (
-          <div>lg</div>
-        ) : (
+          <FadeIn>
+          <TechListSlider  isLg={isLg} topEl={height} content={sliderItems[`${currentItem}`]} />
+          </FadeIn>
+        ) : ( 
           <div className="max-w-[1126px] flex flex-col ">
-            {homeTech.sliderItems.map((item, index) => (
-              <TechListSlider key={index} content={item} />
+            {sliderItems.map((item, index) => (
+              <TechListSlider key={index} isLg={isLg} topEl={height} content={item} />
             ))}
           </div>
-        )}
+       )} 
         {isLg && (
-          <div className={`sticky bottom-0`}>
-            <ul className="flex flex-col gap-y-4">
-              <Link href={"/site3/#sticky-slider-block-1"}>Cell Shuttle</Link>
+          // <div className={`sticky bottom-0`}>
+          <div>
+            <ul className="flex flex-col gap-y-4 border-2 border-black w-fit">
+              {sliderItems.map((item, index) => (
+                <button key={index} onClick={() => setCurrentItem(index)}>{item.title}</button>
+              ))}
+              {/* <Link href={"/site3/#sticky-slider-block-1"}>Cell Shuttle</Link>
               <Link href={"/site3/#sticky-slider-block-2"}>
                 Consumable Cartridge
               </Link>
               <Link href={"/site3/#sticky-slider-block-3"}>Cell Q</Link>
-              <Link href={"/site3/#sticky-slider-block-4"}>Software</Link>
+              <Link href={"/site3/#sticky-slider-block-4"}>Software</Link> */}
             </ul>
           </div>
         )}

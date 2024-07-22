@@ -2,7 +2,7 @@
 import { StaticImageData } from "next/image";
 import  Image  from "next/image";
 import {ArrowButtonText} from "../buttons/ArrowButton";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import FadeIn from "@/components/pruinboom/helpers/FadeIn";
 
 type ContentProps = {
@@ -24,27 +24,15 @@ type ContentProps = {
 
 
 
-export default function TechListSlider({content} : {content : ContentProps}) {
+export default function TechListSlider({content, isLg, topEl} : 
+          {content : ContentProps, isLg : boolean, topEl : number}) {
 
-  const [isLg, setIsLg] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsLg(true);
-      } else setIsLg(false);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
   return (
     <FadeIn>
-    <div  id={`sticky-slider-block-${content.item}`} className="flex flex-col lg:flex-row-reverse">
+    <div  
+         style={{top: `${topEl}`}}
+         id={`sticky-slider-block-${content.item}`} 
+         className={` flex flex-col lg:flex-row-reverse border-2 border-red-700`}>
         {typeof content.image === "string" ? (
            <iframe
 
@@ -54,11 +42,11 @@ export default function TechListSlider({content} : {content : ContentProps}) {
           allowFullScreen
            /> 
         ) : (
-         <Image src={content.image} alt="logo"  />
+         <Image src={content.image} alt="logo" className="w-full lg:w-[50%]"  />
         )}
-        <div>
-            <div>{content.title}</div>
-            <div>{content.description}</div>
+        <div className="flex flex-col gap-y-5 mt-0 lg:mt-[50px]">
+            <div className="text-2xl sm:text-[28px] lg:text-3xl font-satoshi_medium text-cBlue  ">{content.title}</div>
+            <div className="h4cel mb-3 text-cBlueDark">{content.description}</div>
             <ArrowButtonText text={content.linkText} hash={content.linkHash} />
         </div>
     </div>

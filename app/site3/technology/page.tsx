@@ -1,4 +1,4 @@
-import THome from "@/components/celares/sections/tech/THome";
+import THome from "@/components/celares/sections/tech/THero";
 import THtmSection from "@/components/celares/sections/tech/THtmSection";
 
 

@@ -42,11 +42,34 @@
 
 @layer base {
    /* body or html? */
-  body {
+  /* body {
     @apply text-blue_dark;
      
-   
+  } */
+
+  /* Remove scrollbar */
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
   }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* background: #1e2238; */
+    background: transparent;
+  }
+}
+
+@layer utilities {
 
   .section {
     @apply py-[55px] lg:py-[160px];
@@ -100,6 +123,8 @@
     @apply text-[30.4px] lg:text-[32.3px] xl:text-[38px] font-manrope
   }
 
+
+
   .btnC {
     @apply      uppercase px-8 py-3 tracking-wider
     transition-all duration-300 flex items-center  text-[17px]
@@ -136,6 +161,12 @@
 
   .h2cel {
     @apply  leading-tight text-[36px] sm:text-[40px] lg:text-[50px] xl:text-[50px] 
+  }
+
+  .h4cel {
+    @apply text-[16px] leading-[19.2px] sm:text-[20px] sm:leading-[24px]
+           lg:text-[24px] lg:leading-[28.2px]  tracking-[-0.4px] 
+
   }
 
   .link {

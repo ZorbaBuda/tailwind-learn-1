@@ -44,11 +44,15 @@ const config: Config = {
       satoshi_medium: ["satoshi-medium"]
     },
     backgroundImage: {
+      //home page
       heroDesktop: "url('/img/celares/home/Cell_Shuttle_Hero_Shadow@2x.jpg')",
       heroMobile: "url('/img/celares/home/Home_Hero_Mobile@2x.jpg')",
       heroForm:  "url('/img/celares/home/bg-footer.jpg')",
       careersDesktop: "url('/img/celares/home/Home_Careers_BG@2x-scaled.jpg')",
       careersMobile: "url('/img/celares/home/Home_Careers_BG_Mobilev2@2x.jpg')",
+      //tech
+      heroTechDesktop:  "url('/img/celares/sectionTech/Technology_Hero@2x.jpg')",
+      heroTechMobile:  "url('/img/celares/sectionTech/Technology_Hero_Mobile@2x.jpg')"
       
     
     },
