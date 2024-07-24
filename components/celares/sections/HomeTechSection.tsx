@@ -6,11 +6,12 @@ import TechListSlider from "../parts/TechListSlider";
 import { useInView, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 import FadeIn from "@/components/pruinboom/helpers/FadeIn";
+import { useIsLg } from "@/hooks/useIsLg";
 
 export default function HomeTechSection() {
 
   const { headerPart, sliderItems} = homeTech
-  const [isLg, setIsLg] = useState(false);
+  const isLg = useIsLg()
   const [currentItem, setCurrentItem] = useState(0)
 
   const [height, setHeight] = useState(0)
@@ -27,9 +28,6 @@ export default function HomeTechSection() {
   
   });
 
- 
-
-  console.log(isInView)
 
   useEffect(() => {
   if(ref && ref.current){
@@ -38,20 +36,7 @@ export default function HomeTechSection() {
     }
   })
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsLg(true);
-      } else setIsLg(false);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+ 
 
   // const { scrollY, scrollYProgress } = useScroll();
 

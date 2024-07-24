@@ -25,7 +25,7 @@ type ContentProps = {
 
 
 export default function TechListSlider({content, isLg, topEl} : 
-          {content : ContentProps, isLg : boolean, topEl : number}) {
+          {content : ContentProps, isLg? : boolean, topEl : number}) {
 
   return (
     <FadeIn>

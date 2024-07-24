@@ -4,28 +4,13 @@ import MapImage from "@/public/img/celares/home/map-services.png";
 import HeaderPart from "../parts/HeaderPart";
 import { homeRegs } from "@/lib/dataCelares";
 import { FaCircle } from "react-icons/fa";
-import { useState, useEffect } from "react";
 import { DialogMap } from "../ui-components/DialogMap";
 import { TooltipMap } from "../ui-components/TooltipMap";
+import { useIsLg } from "@/hooks/useIsLg";
 
 export default function HomeRegsSection() {
 
-  const [isLg, setIsLg] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsLg(true);
-      } else setIsLg(false);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+  const isLg = useIsLg()
 
   return (
     <section className="py-[90px] xl:py-[124px] bg-white">
