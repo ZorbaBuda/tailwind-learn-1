@@ -12,7 +12,7 @@ type ContentProps = {
 export default function NewsArticle({metadata} : {metadata : ContentProps}) {
   return (
     <Link href={metadata.link}
-        className="bg-cGrayLight hover:bg-white group "
+        className="bg-cGrayLight hover:bg-white group flex flex-col  "
     >
         <Image
           src={metadata.image}
@@ -21,15 +21,15 @@ export default function NewsArticle({metadata} : {metadata : ContentProps}) {
           height={683}
           className="aspect-video object-cover  "
           />
-          <div className="p-5 flex flex-col   border-2 border-red-400 ">
+          <div className="p-5 flex flex-col justify-between h-full  ">
             <div className="">
           <div className="text-cBlue font-bold text-base uppercase tracking-widest">{metadata.date}</div>
-          <div className="group-hover:text-cBlue group-hover:underline font-satoshi_medium
+          <div className="mt-4 group-hover:text-cBlue group-hover:underline font-satoshi_medium
              text-xl lg:text-2xl leading-[30px] lg:leading-9 text-black
           ">
             {metadata.summary}</div>
             </div>
-            <div className="  flex justify-end border-2 border-black">
+            <div className="  flex justify-end ">
             <ArrowButtonNoLink  />
           </div>
           </div>

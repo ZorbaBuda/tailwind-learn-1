@@ -60,7 +60,7 @@ export default function Navbar() {
       <div className='flex  justify-between h-full  px-[50px] '>
 
         {/* logo */}
-        <Link href="/site1" className="flex items-center  ">
+        <Link href="/site1" className="flex items-center border-2 border-black ">
             <Image
               // className='w-[188px] h-[90px]'
               className="  "
@@ -74,7 +74,7 @@ export default function Navbar() {
         </Link>
 
         {/* nav - initially hidden, show on desktop */}
-        <div className='hidden lg:flex items-center '>
+        <div className='hidden lg:flex items-center border-2 border-red-600 '>
           {/* <NavLinks /> */}
           <NavLinks />
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -15,13 +15,18 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar2() {
   const pathname = usePathname();
+  const [mobileNav, setMobileNav] = useState(false);
   // console.log(pathname)
+  useEffect(() => {
+    setMobileNav(false)
+  }, [pathname])
+  
 
   const { logo } = headerData;
   // header state
   // const [isActive, setIsActive] = useState(false);
   // nav mobile state
-  const [mobileNav, setMobileNav] = useState(false);
+  
 
   const toggleMobileNav = () => {
     setMobileNav(!mobileNav);
