@@ -6,6 +6,10 @@ export default function Home() {
     <main className="bg-grey_light w-full h-screen flex items-center">
     
     <div className='flex flex-col mx-auto gap-10'>
+
+    <Link href={"/typescript"} className="btn-prac inline-block">
+         typescript
+        </Link>
         
         <Link href={"/site1"} className="btn-prac inline-block">
           Pruinboom
